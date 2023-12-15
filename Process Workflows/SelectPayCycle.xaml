@@ -1,0 +1,264 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SelectPayCycle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strPaycycleName" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>586.6666666666666,1028.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SelectPayCycle_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence: SelectPayCycle" sap:VirtualizedContainerService.HintSize="596.6666666666666,964" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch: SelectPayCycle" sap:VirtualizedContainerService.HintSize="534.6666666666666,853.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="This workflow enters the paycycle value in the search box and proceeds to the next page to enter dates." DisplayName="SelectPayCycle" sap:VirtualizedContainerService.HintSize="496,614" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="strURL" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Workflow started Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectPaycycleWorkflowStarted&quot;).ToString]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <Assign DisplayName="Assign: PeopleSoft Payment Selection Criteria URL" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaymentSelectionCriteriaURL").ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <uix:NCheckState sap2010:Annotation.AnnotationText="Checks if the search box for Paycycle is available or not." DisplayName="Check App State 'Pay Cycle'" sap:VirtualizedContainerService.HintSize="954,336.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message: Text box found" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;PaycycleTextBoxFound&quot;).ToString]" />
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Pay Cycle'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Text="[in_strPaycycleName]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_DEFN.GBL?PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Payment%20Selection%20Criteria&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="YuR6qQMj8UKVSh8nD_afcA" DesignTimeRectangle="397, 309, 418, 46" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Pay Cycle'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE' type='text' tag='INPUT' class='PSEDITBOX PTCPEDITBOXWITHICON ' aaname='Pay Cycle' /&gt;" Guid="f76cd10b-0532-473a-a20a-cdb78e0579d1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAyCAYAAAAnUayGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAN1SURBVHhe7dzLSiNBFIDhPMy8lfGG22heQAQXXhDxQlDUhQuXgoILdREUFHRElIASdERciKiIF1BX3s7M6ak0XZ02mLQtSfF/cECpSpY/lU53UgIADiNyAJxWFrmVwq1kZv9IOleUX9nfDMMwdT9N/3ql3dJ+hVmRq7QRAOpZ6YCmHQvyI1faAACNLHxQ8yPHCQ6AC/IHd9aBzY9c+IgHAI0q2DM/cnrxDgBcEOwZkQPgHCIHwGlEDoDTiBwApxE5AD/q7e1Njo6OZH19XZaXl2V/f1+urq7k4+PD7PheVUUulUp5AwDVur6+lqmpKeno6JB0Ol02XV1dsrm5Kc/Pz+YV34PIAUjczs6OtLS0RMYtPJlMRi4uLswr4yNyABK1vb0dGbNK09nZKU9PT+Yd4iFyABJzenoqzc3NkRGbn5+XhYUFmZmZidwzNDRk3iUeIgcgMd3d3Va42traZHd3V97f382O/x4fH2VyctLaq3NycmJ21I7IAUiEBiocLQ3cZ/Tb1f7+fmv/6OioWa0dkQOQCP04GgzWyMiIWfnczc2N9dG1vb099q0lRA5AIsbHx63IbWxsmJXKent7rdfprSdxEDkAiRgcHLRitbe3Z1YqGxsbs16nX17EQeQAJGJiYsKKVT6fNyuVhU9yDw8PZqU2RA5AIhYXF61YfeWa3P39vXVNTp+OiIvIAUjE2dmZFTmd8/Nzs1pOv2AYGBiw9k9PT5vV2hE5AInp6emxopXNZiPvfXt5eSn7eKtzfHxsdtSOyAFIjH5pEPXM6vDwsKyurnr3zc3NzXlPQIT36OhaXEQOQKK2trYiA/bV0ce+4twrR+QAJE5DF/V86ldHH/mqNXREDsCPuLy89GKlTzFEhayvr8/7SSa9ny4qiLlczvvBzWoROQA/6vX1VYrFoqytrXm3mSwtLXm/DBxUKBQir+XpL5NUGzoiB6AufRY6DWM1iByAunV4eCitra1+4PQjrd5uUg0iB6CulUJXS+AUkQNQ9/Sm4FoCp4gcAKcROQBOI3IAnFZV5ACg0RA5AE4jcgCcRuQAOI3IAXAakQPgtMjINeWK5i8AaGzBnvmRy8z+kZXCrfkPABpT/uDO61mJHzkNXHABABpR+MDmR07pEY8THYBGVDqohS+9WZFTwY168Y5hGKbeJ13hgFYWOQBwh8hfhAAO4M/nw0wAAAAASUVORK5CYII=" InformativeScreenshot="f40928c0a99f44b0fb20be8b3172a80a.png" IsResponsive="True" Reference="ao86_PT9xkmS2L7lE3WumQ/8g6udexfxESawcekkfPAQA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Payment Selection Criteria' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="138, 320, 108, 29" ElementType="Text" FriendlyName="'Pay Cycle'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' type='' tag='LABEL' class='PSSRCHEDITBOXLABEL PT_CP_MANDATORY_LABEL' aaname='Pay Cycle' check:innerText='Pay Cycle' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAdCAYAAABPGImpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAS1SURBVGhD7Vktt6MwEN3fiYnBYDAYVA0G80wNqqamugZThcHUYGqqajAYDKbq7lCSME0TSt92X1/P6T0nJl9M5k7mI/zBB2+FD2Fvhg9hb4YPYW+GD2Fvhg9hb4YPYW8GRliD3cKD57magB+GSLICp04u+W1ojyjWKeLQh5ByCz9EnK6xOzRy0g+j2WGhdbjCQXZ/Fw8QxlpAH/5lpNXFFwKbrKyJJP95Y3s2YV+lOsEDhFETaYlWrnw1mt1C36h77cflfjZhHh1goIwTtsDO9CDnGtUqZopJobl+Ja4U4iH4ynGoz3KwF/uA/CvQ457nY32Ugz+BZxPW6bPdIeyCGtvQNadBtV0iYfHDEz7COMWmGie2RSLXe/BtmjvvsRRq/f0DHtf+uF9WSeMz0SBPAiTLLcpTi8uR2wKJXOf5a9xKcsZ+KeTeAitDkK4usUkj+FrWgGLlBuyoA+4R1lRYJ6HeRwQx0k1FEtvhiGGPEtavVYezNYGFmtwTovotijrvl5pwK6FXOGLtq2+4ZHahJ0Sttdw6bjiGnE05ES+FIccEYS2d1bWPCGmuxfr+7HXnNGHnznSJS+zl7ezoAEM/EZPXgwUT2n0GX83Xh+aWaypqasyClinDekumMWUczjFOQLBEKfXUVqtR+VFOpi3hIqzvVwbB9mnKkUSx3GtdKnwvS6Tmk48wN7tFhUyvGYV1KoNbNT+0C1wZi53TjTjhvEXccCKQDWpwF7xUFnuB48Y6CBv3ERP7JCiMDOlbhImYDudKOM4d6mOFYpshjbib5O6AuTKmKE5kxLXkwr8SRhgVx5TsNByKhbHsn+uCrYRNe7M+6x3GTKN4hDAKqmGYICtO1sDeVhuDILNxwmyK4lZ9a1lWcGXMSFCsOK6121a3nRtOciXIASvZ73kZ+Y8ZsBLG95luOvZLPJh02NEdmP+mKx6lGbbFEfW5YoIZCjUVxa06KWbWSnRwtcZwXfNh3vYpw+GKHmP4JP6RsDh/OmF8nY+s4vfPHsMG1MgjOUaKOpBVD/M8pLMLPK5cIt6Z1nc0LyBD2qA4jkmRQp1Hcg+67QcyHLnfWKMqcJcYw9ClHQ6X+LBrlXgCYdxajHX1FqEeMwm7VpSvrFzMtFwF+kakvyEQfu1wbMcNhsI51C7uNsgT6lzv4fuuZGAATzqu3WXPzRh7wq287lbC+D7md6Zq3affMPK5GxnjqCBcxTymWXz+1WGGZktl7+GhpylrcnJ9hktzGQ6XmWquXL6qnJsSS1tN6CCMG8mQ1g/79Gm9ChW9LkyP8R9iGG+CLFaRFkIZ3YgWRcLnz6i9rOhwypO7pIl448xu+QtM38y6jGOycKYzJ1x5LsIIzW5CZscD+1MI6zFkifJZqn+SSjIUpw4di03RLWNUdKd6/DvF7xWaA3b975VgvNmzf690JVIlxwzDGZ6mYgQq6ZFPU2VtaHmCsB7dqUDGn6ZI3mRdwtxGgRH2Gtx9W/wp3H1b/B14LWEtxblAKunbafkz0KJajS/6s4r2F+ElhPFsSrVgdbgJsP8dlqTnN/6c5XjNDaOiWQVb4UeX3wnzCuVng4pmHYP8S51WvUaQ2Xh5DPvgMXwIeysAfwH3/hCRyiMYzwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_DEFN.GBL?PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Payment%20Selection%20Criteria&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="E-s_n3BA-0ypg_m5yd9iWQ" DesignTimeRectangle="53, 637, 70, 26" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='#ICSearch' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='#ICSearch' tag='INPUT' type='button' class='PSPUSHBUTTONTBSEARCH PSPRIMARY' aaname='Search' check:text='Search' /&gt;" Guid="a18778a9-17ea-48d4-ae31-a4c38ae5ef38" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAeCAYAAACLz4iQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAPXSURBVGhD7ZfLbuIwFIbnAbrNhgXqBlUIxKjtIEpBEUwIGadJcGJ4/0c5c3yN45g0nbIYpCz+Bb4c7M/H/3F+PEx+w6DPNYDqqQFUTw2gemoA1VMDqJ4aQPXUFVBHmEYUSHUGdrnARYmxMxBSwHThm3M/Wud8P2eI3v39PrVBzVLY0bOBc0E4HBBjNbALY7B7j5vz7kg3AfWUMAmjKmG9Ojb6HhYphCcFkZXwOrP67kg3AJVCVMkgcWi3W5plEKvsItF9ZtVNQXUFmROZVUWSOn21t4msE5mHvnZIYdQYpxXDZOfxwopB0ppTAOH9OXrkoQJqxpaw/KnGzAgsE+yzbILHinYEAitWDcodfwaaU1i+1GO1HFAJbE/qD04nmD9/JWMSWGU1IHqqgOSs3hBu8LExPjbA+QKLnI9HWf5IiX0QChT3Sx6PqvgYd8z70VvlIVvxtE2oWBqWBIUxFCCqY6mx3FaWjq20zfyd1hNQ4nTJCVabPzDu8KRxVKk/YRC+WYCtDRQJqdtXFAoxvoK1c4KBXgP3QdOuQKHsTWstUgmFH/DUWqeJdcF1LWWbBiXarqw1OyR1O6oNChW84aLM6TTFqgqiyL0WBCul7Hf/QMhAKWGh2p6OTJxoM2u0NBSE2GrDiqs2XCuHRPWFnmvzyiFyC4hkcdKgGgenNFHFzF2XF5RW8Ezg9UAhwRS2PYSLUQpzfXLPJ8hEO4OtN+ss73tr949eCEw2OWzxv2J+BYxn+EDhtbDmCumsqShM3T6PNCgSefrVzWBp1mjvBOVq9PIB6xQzQSxYBhNXwKT3GTLtNY4KtXl7cY9o5JmBUosZc/eAQhhz06akrz36VaP9imoz9/RfifUlUFqjvQqmT9fxtS5pUMGuVDC48VIIowymS+2DHVfvfwA1VffTTbu2nI3oq+fbhFcJPlz5fPSJo8fTvgrqn67edzIKT1kM8lQiW0GossGYs/YgNNpVe3xblmd5Fhvs1Tr6gpp1m/kYC4fIXPIhft/g6tXl8YLVLQyJU92O8LTHCqZ8xa4aj2IxfB6FhfPRPNqoE8cD2P7ibXVGuaU+WCKQLjP3Zm0sKxv28/faxC4oLwhRxMOvjY1su41H8cDO00B+FDcrH81y5wGZ4AL0Aw9fuOLBWUFmvdILCwp/d5l4+FYTpq8fm7SERDw37M10gUI5D05ZVOrC035wfheUkPoUwYXbcCSAUmSa++Az8w4lFPYnDJ+DG2/PkZ8vmX0o/HF7zERG6AzJjId9AorryidMvG9m7Q1BDXI1gOqpAVRPDaB6agDVUwOonhpA9dJv+AsSfGh3/SOE7gAAAABJRU5ErkJggg==" InformativeScreenshot="c06c8e8e210e2a1952919e61d9824528.png" Reference="ao86_PT9xkmS2L7lE3WumQ/cb4YOqJbGkCPzjYJE9rNhA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Payment Selection Criteria' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="41, 500, 104, 25" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' type='' tag='LABEL' class='PSSRCHEDITBOXLABEL PT_CP_MANDATORY_LABEL' aaname='Pay Cycle' check:innerText='Pay Cycle' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAdCAYAAABPGImpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAS4SURBVGhD7ZnRiqswEIbPk0hEFCnKUimlUCwiFZGKKLLv/yj/iTWJY5rYdre73UIvvotqkibzT2Ym8d/n5yfevA5vwV6Mt2AvxluwF+Mt2IvxFuzFeAv2YhDBGhxWDhzHBoPr+4iSDKduPsifoa2QbWOEvgsm5s1cH2G8xaFszH1+muaAlbLhBqWpzR3cIRjB43/8x0Srsw94prkSWJT+vrM9WrCPvBM/7hCMw+IcrTbYs2gOK7WjrvHr8360YA5fQHf+QQVb4dBojfsaxSYkhomR/4VdNjOIA+8jRVn36n1fl0g/PPXecVxsK22Mn+TRgnW9/HFFsDM19r6tTYNiv0ZE8ofDXPhhjF0x5Y82i0R/B+62Iv0F/RFrJvtfX2C1dafxkkI4n06DNPIQrffITy364VmbIRL9HHeL6qJPj+OaibEZNuX8fVfn2MUBXDVXj+fKHQrdbtcEawpsI1+Nw7wQ8a5Ao7cTWHLYvYINfeXiTDCsDkK0QRD53GCo/rhWghsFnVFh68r/sM3ZxiCI7GvYddRxtHk2+UK+ZNo8FgRr+Vpt4zCftzVEsH9H9XBZsL7TQ+IaR7E7O76A8TkXJq1HD+a0xwSubK8WTT1XN9TSOwMtMYZxlyyz5BzWd1QAb41c2KktNpPxgxS1qT0VbHguHYKM0+STiGx9VLaUfK1K5Lib8mKwSwokqs80WasxqFfTRdugxlgdrGHEinUXUccJkNZTHxqC18cpV1p3rEWwaRy2ME6ErJXPR74kGAv54mwFR9+hrgpk+wRxQMMkDQcklBFDUSEDvlNn45r4rmCcyXDEyFbH4bkwFM9vDcFGwZaj2VD1ju90p7hHMJ5UfT9Ckp2Mib0tdppAOlQwk6GoV196lhFqjBsKFCPVVoVtudup40RZS9qX2IjnjpOgUM8XMApGx1lG5X7BnUWHma4k8Ztv8SBOsM8q1H1BJqYZVDcU9eoou/GsxBcu+2ih63b03b7kONTQUw5f5JuChenDBaP9XCSFPIgPmHPYSI00EO+4oUru1WM7B7E6zF+DGpcLby3rO97O4460Q1ZNRZGkTgMxBt/tJXccMd50RpXQkBgi/UZIvDu0Ch4gGPUWrV+9h6/e6YLNDeVKL2c3eq6E/0eg/oPB/zigavWDs69C3GWSH8ZI1RiuaysGRmjRMQ+X89zj70UONgq2VHQsnXUfvsN4zN2JHMcPhJuQ5jRDzJ8tZsRUyl7jrqspY3EyX8MZm+PQOfMzVypuVfomx9p0JrQIRp1kLOvHcYayXqaKwRZ6xPiBHEZh3GOlaD72FzmmRRbR9jecvYx0OKXRVdFYuLNWt/QGZkA/l1EWD858zREtFGyCDeMcFubs8bamg/P04+uCDYxVoriWGq6kogTZqUNHclMgwwShy2P1/iuH3xlNicPwecWbdvbNn1e6HLGcxw2OM15NhfBk0SOupvJay78Lgg10pwwJvZri8422OWqLYxHBnsPVu8Xf4urd4t/guYK1PM95wkhfLssfQYtiM93o33RofxJPEYxWUxJvU1pK8h/EUPT8xY+zlOfsMH5olsmWucH5c8JzPobyQ7PKQe75nFbccsPyRJ6ew97cx1uwl+IT/wGHR9BrBYJpqAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Messag : Paycycle Text Box Not Found" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;PaycycleTextBoxNotFound&quot;).ToString]" />
+                      <Throw DisplayName="Throw SE: Paycycle Text Box Not Found" Exception="[new SystemException(in_Config(&quot;PaycycleTextBoxNotFoundSE&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_DEFN.GBL?PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_DEFN.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Payment%20Selection%20Criteria&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="YuR6qQMj8UKVSh8nD_afcA" DesignTimeRectangle="397, 309, 418, 46" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Pay Cycle'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE' type='text' tag='INPUT' class='PSEDITBOX PTCPEDITBOXWITHICON ' aaname='Pay Cycle' /&gt;" Guid="f76cd10b-0532-473a-a20a-cdb78e0579d1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATkAAAAyCAYAAAAnUayGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAN1SURBVHhe7dzLSiNBFIDhPMy8lfGG22heQAQXXhDxQlDUhQuXgoILdREUFHRElIASdERciKiIF1BX3s7M6ak0XZ02mLQtSfF/cECpSpY/lU53UgIADiNyAJxWFrmVwq1kZv9IOleUX9nfDMMwdT9N/3ql3dJ+hVmRq7QRAOpZ6YCmHQvyI1faAACNLHxQ8yPHCQ6AC/IHd9aBzY9c+IgHAI0q2DM/cnrxDgBcEOwZkQPgHCIHwGlEDoDTiBwApxE5AD/q7e1Njo6OZH19XZaXl2V/f1+urq7k4+PD7PheVUUulUp5AwDVur6+lqmpKeno6JB0Ol02XV1dsrm5Kc/Pz+YV34PIAUjczs6OtLS0RMYtPJlMRi4uLswr4yNyABK1vb0dGbNK09nZKU9PT+Yd4iFyABJzenoqzc3NkRGbn5+XhYUFmZmZidwzNDRk3iUeIgcgMd3d3Va42traZHd3V97f382O/x4fH2VyctLaq3NycmJ21I7IAUiEBiocLQ3cZ/Tb1f7+fmv/6OioWa0dkQOQCP04GgzWyMiIWfnczc2N9dG1vb099q0lRA5AIsbHx63IbWxsmJXKent7rdfprSdxEDkAiRgcHLRitbe3Z1YqGxsbs16nX17EQeQAJGJiYsKKVT6fNyuVhU9yDw8PZqU2RA5AIhYXF61YfeWa3P39vXVNTp+OiIvIAUjE2dmZFTmd8/Nzs1pOv2AYGBiw9k9PT5vV2hE5AInp6emxopXNZiPvfXt5eSn7eKtzfHxsdtSOyAFIjH5pEPXM6vDwsKyurnr3zc3NzXlPQIT36OhaXEQOQKK2trYiA/bV0ce+4twrR+QAJE5DF/V86ldHH/mqNXREDsCPuLy89GKlTzFEhayvr8/7SSa9ny4qiLlczvvBzWoROQA/6vX1VYrFoqytrXm3mSwtLXm/DBxUKBQir+XpL5NUGzoiB6AufRY6DWM1iByAunV4eCitra1+4PQjrd5uUg0iB6CulUJXS+AUkQNQ9/Sm4FoCp4gcAKcROQBOI3IAnFZV5ACg0RA5AE4jcgCcRuQAOI3IAXAakQPgtMjINeWK5i8AaGzBnvmRy8z+kZXCrfkPABpT/uDO61mJHzkNXHABABpR+MDmR07pEY8THYBGVDqohS+9WZFTwY168Y5hGKbeJ13hgFYWOQBwh8hfhAAO4M/nw0wAAAAASUVORK5CYII=" InformativeScreenshot="f40928c0a99f44b0fb20be8b3172a80a.png" IsResponsive="True" Reference="ao86_PT9xkmS2L7lE3WumQ/8g6udexfxESawcekkfPAQA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Payment Selection Criteria' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="138, 320, 108, 29" ElementType="Text" FriendlyName="'Pay Cycle'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl class='PSPAGECONTAINER' tag='TABLE' /&gt;&lt;webctrl id='PYCYCL_NORM_VW_PAY_CYCLE_LBL' type='' tag='LABEL' class='PSSRCHEDITBOXLABEL PT_CP_MANDATORY_LABEL' aaname='Pay Cycle' check:innerText='Pay Cycle' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAdCAYAAABPGImpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAS1SURBVGhD7Vktt6MwEN3fiYnBYDAYVA0G80wNqqamugZThcHUYGqqajAYDKbq7lCSME0TSt92X1/P6T0nJl9M5k7mI/zBB2+FD2Fvhg9hb4YPYW+GD2Fvhg9hb4YPYW8GRliD3cKD57magB+GSLICp04u+W1ojyjWKeLQh5ByCz9EnK6xOzRy0g+j2WGhdbjCQXZ/Fw8QxlpAH/5lpNXFFwKbrKyJJP95Y3s2YV+lOsEDhFETaYlWrnw1mt1C36h77cflfjZhHh1goIwTtsDO9CDnGtUqZopJobl+Ja4U4iH4ynGoz3KwF/uA/CvQ457nY32Ugz+BZxPW6bPdIeyCGtvQNadBtV0iYfHDEz7COMWmGie2RSLXe/BtmjvvsRRq/f0DHtf+uF9WSeMz0SBPAiTLLcpTi8uR2wKJXOf5a9xKcsZ+KeTeAitDkK4usUkj+FrWgGLlBuyoA+4R1lRYJ6HeRwQx0k1FEtvhiGGPEtavVYezNYGFmtwTovotijrvl5pwK6FXOGLtq2+4ZHahJ0Sttdw6bjiGnE05ES+FIccEYS2d1bWPCGmuxfr+7HXnNGHnznSJS+zl7ezoAEM/EZPXgwUT2n0GX83Xh+aWaypqasyClinDekumMWUczjFOQLBEKfXUVqtR+VFOpi3hIqzvVwbB9mnKkUSx3GtdKnwvS6Tmk48wN7tFhUyvGYV1KoNbNT+0C1wZi53TjTjhvEXccCKQDWpwF7xUFnuB48Y6CBv3ERP7JCiMDOlbhImYDudKOM4d6mOFYpshjbib5O6AuTKmKE5kxLXkwr8SRhgVx5TsNByKhbHsn+uCrYRNe7M+6x3GTKN4hDAKqmGYICtO1sDeVhuDILNxwmyK4lZ9a1lWcGXMSFCsOK6121a3nRtOciXIASvZ73kZ+Y8ZsBLG95luOvZLPJh02NEdmP+mKx6lGbbFEfW5YoIZCjUVxa06KWbWSnRwtcZwXfNh3vYpw+GKHmP4JP6RsDh/OmF8nY+s4vfPHsMG1MgjOUaKOpBVD/M8pLMLPK5cIt6Z1nc0LyBD2qA4jkmRQp1Hcg+67QcyHLnfWKMqcJcYw9ClHQ6X+LBrlXgCYdxajHX1FqEeMwm7VpSvrFzMtFwF+kakvyEQfu1wbMcNhsI51C7uNsgT6lzv4fuuZGAATzqu3WXPzRh7wq287lbC+D7md6Zq3affMPK5GxnjqCBcxTymWXz+1WGGZktl7+GhpylrcnJ9hktzGQ6XmWquXL6qnJsSS1tN6CCMG8mQ1g/79Gm9ChW9LkyP8R9iGG+CLFaRFkIZ3YgWRcLnz6i9rOhwypO7pIl448xu+QtM38y6jGOycKYzJ1x5LsIIzW5CZscD+1MI6zFkifJZqn+SSjIUpw4di03RLWNUdKd6/DvF7xWaA3b975VgvNmzf690JVIlxwzDGZ6mYgQq6ZFPU2VtaHmCsB7dqUDGn6ZI3mRdwtxGgRH2Gtx9W/wp3H1b/B14LWEtxblAKunbafkz0KJajS/6s4r2F+ElhPFsSrVgdbgJsP8dlqTnN/6c5XjNDaOiWQVb4UeX3wnzCuVng4pmHYP8S51WvUaQ2Xh5DPvgMXwIeysAfwH3/hCRyiMYzwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" ContentHash="eKTKD0PkHkmPJ4Iqg16vjg" IconBase64="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" InformativeScreenshot="0ic9-djRK9k2Bzuij4tXELQ" Reference="ao86_PT9xkmS2L7lE3WumQ/QYHxe0ZxnkacBkm4UZ34eQ" Selector="&lt;html app='msedge.exe' title='Payment Selection Criteria' /&gt;" Title="Payment Selection Criteria" Url="[strURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectPaycycleWorkflowCompleted&quot;).ToString]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="450,231.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message: SE" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;SelectPaycycleWorkflowSE&quot;).ToString+Environment.NewLine+&quot;Exception Source: &quot;+exception.Source+Environment.NewLine+&quot;Exception Message: &quot;+exception.Message]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Rethrow DisplayName="Rethrow SE" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
