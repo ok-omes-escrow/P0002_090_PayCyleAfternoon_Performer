@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,2024</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,2270</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,7 +109,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the status for the paycycle changes from running to Created , if it changes we need to approve the paycycle else we mark it as exception." DisplayName="CheckCreatedStatusandApprovePaycycle" sap:VirtualizedContainerService.HintSize="572,1959.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the status for the paycycle changes from running to Created , if it changes we need to approve the paycycle else we mark it as exception." DisplayName="CheckCreatedStatusandApprovePaycycle" sap:VirtualizedContainerService.HintSize="572,2205.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPaycycleStatus" />
       <Variable x:TypeArguments="x:Boolean" Name="boolPaycyleStatus" />
@@ -146,16 +146,16 @@
         <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleManagerURL").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:RetryScope sap2010:Annotation.AnnotationText="This retry scope checks for created status and if found it exists , if not found it retries according to the mentioned times and then exists with the exception as the condition is not met." ContinueOnError="[convert.ToBoolean(in_Config(&quot;RunningStatusRetryScopeContinueOnError&quot;))]" DisplayName="Retry Scope: Check Running Status" sap:VirtualizedContainerService.HintSize="510,149.33333333333334" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[cint(in_Config(&quot;RunningPaycycleRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;DelayRunningRecords&quot;).ToString)]">
+    <ui:RetryScope sap2010:Annotation.AnnotationText="This retry scope checks for created status and if found it exists , if not found it retries according to the mentioned times and then exists with the exception as the condition is not met." ContinueOnError="[convert.ToBoolean(in_Config(&quot;RunningStatusRetryScopeContinueOnError&quot;))]" DisplayName="Retry Scope: Check Running Status" sap:VirtualizedContainerService.HintSize="510,614.6666666666666" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[cint(in_Config(&quot;RunningPaycycleRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;DelayRunningRecords&quot;).ToString)]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="590,258.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,258.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -295,13 +295,13 @@
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <If sap2010:Annotation.AnnotationText="checks if retry scope returns true that means the condition was met and proceeds with approving the paycycle else an exception is thrown." Condition="[boolRetryScopeResult]" DisplayName="If Record was created" sap:VirtualizedContainerService.HintSize="510,994" sap2010:WorkflowViewState.IdRef="If_4">
+    <If sap2010:Annotation.AnnotationText="checks if retry scope returns true that means the condition was met and proceeds with approving the paycycle else an exception is thrown." Condition="[boolRetryScopeResult]" DisplayName="If Record was created" sap:VirtualizedContainerService.HintSize="510,774.6666666666666" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -310,14 +310,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,764.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_30">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,545.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_30">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message: Paycycle Approved" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;PaycycleStatusChanged&quot;).ToString]" />
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager Approve" sap:VirtualizedContainerService.HintSize="434,273.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager Approve" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -399,7 +399,7 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -412,7 +412,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleApprovalURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Approval" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Approval" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>

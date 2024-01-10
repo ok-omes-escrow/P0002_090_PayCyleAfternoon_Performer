@@ -97,6 +97,8 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Sequence: SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="596.6666666666666,1054.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -110,6 +112,7 @@
         <Sequence sap2010:Annotation.AnnotationText="This workflow selects server and Processes the record which changes the paycyle status to running and creates an instance number." DisplayName="SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="496,704.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strURL" />
+            <Variable x:TypeArguments="x:Boolean" Name="boolDropdownAppears" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,25 +136,26 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleManagerURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <uix:NCheckState DisplayName="Check App State 'Payment Selection'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="516,2546.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                <uix:NCheckState DisplayName="Check App State 'Payment Selection'" EnableIfNotExists="False" Exists="[boolDropdownAppears]" sap:VirtualizedContainerService.HintSize="494,1416.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears: Paycycle Manager" sap:VirtualizedContainerService.HintSize="472,2325.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Target appears: Paycycle Manager" sap:VirtualizedContainerService.HintSize="450,1195.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strPaymentSelectionData" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message: Server Dropdown Appears" sap:VirtualizedContainerService.HintSize="410,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;ServerDropdownFound&quot;).ToString]" />
-                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="[in_Config(&quot;PaymentSelectionandCriteriaAttributeName&quot;).ToString]" DisplayName="Get Attribute 'Payment Selection'" sap:VirtualizedContainerService.HintSize="410,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strPaymentSelectionData]" Version="V3">
+                      <ui:LogMessage DisplayName="Log Message: Server Dropdown Appears" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;ServerDropdownFound&quot;).ToString]" />
+                      <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="[in_Config(&quot;PaymentSelectionandCriteriaAttributeName&quot;).ToString]" DisplayName="Get Attribute 'Payment Selection'" sap:VirtualizedContainerService.HintSize="388,211.33333333333334" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[strPaymentSelectionData]" Version="V3">
                         <uix:NGetAttributeGeneric.Target>
                           <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_MGR.GBL?Page=PYCYCL_MGR&amp;Action=U&amp;PAY_CYCLE=ALT" ContentHash="E4_cRXB9AUaffzaOp1ZM8Q" DesignTimeRectangle="1276, 622, 129, 44" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'SELECT PYCYCL_WK_OVRD3_…'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='tdgbrPYCYCL_STEP_VW$0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='tdgbrPYCYCL_STEP_VW$0' tag='TABLE' /&gt;&lt;webctrl type='' tag='SELECT' class='PSDROPDOWNLIST' aaname='' /&gt;" Guid="b9477175-285d-4e84-a1e8-5775229e1d27" ImageBase64="" InformativeScreenshot="844c789837d5a440c8f8ad264dea99c7.png" Reference="ao86_PT9xkmS2L7lE3WumQ/R8ST9p458kemMKDW5dkQMQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Pay Cycle Manager' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
@@ -162,20 +166,21 @@
                           </uix:TargetAnchorable>
                         </uix:NGetAttributeGeneric.Target>
                       </uix:NGetAttributeGeneric>
-                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = true]" DisplayName="If First Server Is Present" sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = true]" DisplayName="If First Server Is Present" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,434" sap2010:WorkflowViewState.IdRef="Sequence_10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message: First Server Found" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;FirstValueServerDropdownFound&quot;).ToString]" />
                             <uix:NSelectItem DisplayName="Select Item 'Payment Selection'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString]" Version="V3">
                               <uix:NSelectItem.Items>
                                 <scg:List x:TypeArguments="x:String" Capacity="4">
@@ -198,23 +203,30 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
-                        </If.Else>
-                      </If>
-                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString) = true]" DisplayName="If Second Server Is Present" sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString) = true]" DisplayName="If Second Server Is Present" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,434" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message: Second Server Found" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SecondValueServerDropdownFound&quot;).ToString]" />
                             <uix:NSelectItem DisplayName="Select Item 'Second Payment Selection'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString]" Version="V3">
                               <uix:NSelectItem.Items>
                                 <scg:List x:TypeArguments="x:String" Capacity="4">
@@ -240,20 +252,21 @@
                           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13" />
                         </If.Else>
                       </If>
-                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaThirdServerName&quot;).ToString) = true]" DisplayName="If Third Server Is Present" sap:VirtualizedContainerService.HintSize="410,430.6666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaThirdServerName&quot;).ToString) = true]" DisplayName="If Third Server Is Present" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,434" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message: Third Server Found" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;ThirdValueServerDropdownFound&quot;).ToString]" />
                             <uix:NSelectItem DisplayName="Select Item 'Third Payment Selection'" sap:VirtualizedContainerService.HintSize="334,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="[in_Config(&quot;PaymentSelectionandCriteriaThirdServerName&quot;).ToString]" Version="V3">
                               <uix:NSelectItem.Items>
                                 <scg:List x:TypeArguments="x:String" Capacity="4">
@@ -276,10 +289,46 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17" />
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,506.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaFirstServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaSecondServerName&quot;).ToString) = false AND strPaymentSelectionData.Contains(in_Config(&quot;PaymentSelectionandCriteriaThirdServerName&quot;).ToString) = false]" DisplayName="If No Server Value was found" sap:VirtualizedContainerService.HintSize="334,419.3333333333333" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="300,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message: No Server Found" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;ServerDropdownValueNotFound&quot;).ToString]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
+                                  <Throw DisplayName="Throw SE: No Server Found" Exception="[new SystemException(in_Config(&quot;ServerDropdownValueNotFoundSE&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="258,54" sap2010:WorkflowViewState.IdRef="Throw_3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Throw>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19" />
+                              </If.Else>
+                            </If>
+                          </Sequence>
                         </If.Else>
                       </If>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Process Button'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V3">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Process Button'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V3">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_MGR.GBL?Action=U&amp;PAY_CYCLE=ALT&amp;PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL%3fAction%3dU%26PAY_CYCLE%3dALT&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Pay%20Cycle%20Manager&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="b5RnfaKJgE6MsfUf2V17_Q" DesignTimeRectangle="1033, 742, 208, 51" DesignTimeScaleFactor="1.5" FriendlyName="'Process Button'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='tdgbrPYCYCL_STEP_VW$0' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='tdgbrPYCYCL_STEP_VW$0' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='PSPUSHBUTTON Left' aaname='' check:text='Process' /&gt;" Guid="cc0f9dd2-0e0f-4c93-99ee-c61e3703101b" ImageBase64="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" Reference="ao86_PT9xkmS2L7lE3WumQ/tfhhPVG-B0WOx9epH_YLmA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Pay Cycle Manager' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
@@ -290,9 +339,9 @@
                           </uix:TargetAnchorable>
                         </uix:NClick.Target>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="[cdbl(in_Config(&quot;MediumDelay&quot;))]" DisplayName="Click 'Process Monitor'" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" Version="V3">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="[CDbl(in_Config(&quot;DelayBeforeButtonClick&quot;))]" DisplayName="Click 'Process Monitor'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" Version="V3">
                         <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_MGR.GBL?PAY_CYCLE=ALT&amp;PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL%3fPAY_CYCLE%3dALT&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Pay%20Cycle%20Manager&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="DsRYpg4yYkyGbbQhi0iipg" DesignTimeRectangle="1108, 484, 159, 25" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Process Monitor'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PYCYCL_WORK_LABEL_FLD' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='PRCSRQSTDLG_WRK_LOADPRCSMONITORPB' tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PYCYCL_WORK_LABEL_FLD' tag='TABLE' /&gt;&lt;webctrl id='PRCSRQSTDLG_WRK_LOADPRCSMONITORPB' type='' tag='A' class='PSHYPERLINK' aaname='Process Monitor' check:innerText='Process Monitor' /&gt;" Guid="d18c6592-b4ad-4b5d-8217-d59d2a3abd0d" ImageBase64="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" InformativeScreenshot="4b96f6b07ecefd18032a34773d9a1ea3.png" Reference="ao86_PT9xkmS2L7lE3WumQ/PBlTxi_mvUqSYoUxuPEDHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Pay Cycle Manager' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS_6/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_MGR.GBL?PAY_CYCLE=ALT&amp;PortalActualURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL%3fPAY_CYCLE%3dALT&amp;PortalContentURL=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2fEMPLOYEE%2fERP%2fc%2fCREATE_PAYMENTS.PYCYCL_MGR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Pay%20Cycle%20Manager&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS_6%2f&amp;PortalURI=https%3a%2f%2fsoklfpub-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS_6%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="YpKFEEyRQ0af4-Ym5bPUZA" DesignTimeRectangle="1108, 484, 159, 25" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Process Monitor'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PYCYCL_WORK_LABEL_FLD' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='PRCSRQSTDLG_WRK_LOADPRCSMONITORPB' tableRow='2' tag='A' aaname='Process Monitor' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PYCYCL_WORK_LABEL_FLD' tag='TABLE' /&gt;&lt;webctrl id='PRCSRQSTDLG_WRK_LOADPRCSMONITORPB' type='' tag='A' aaname='Process Monitor' class='PSHYPERLINK' check:text='Process Monitor' /&gt;" Guid="d18c6592-b4ad-4b5d-8217-d59d2a3abd0d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKMAAAAdCAYAAADGrNyFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAY6SURBVHhe7Zm/SytLFMffH2OVzi5dOjsrO7t0dhbCwyKNBJstbG4RixQ2CoJYPLub5gqCq8QsKglyEwkXg1xykUceF9GkOO/MzDn7Y3Z2k4163WI+MGh2zuzOnvnOnDmzf4HFkhOsGC25wYrRkhusGC25wYrRkhusGC25ISTGX3C0fQ4L68mlWLmE9cMe9EYTamOZTh+qvg9d2O3S5UR+wO4m21+DR1f/BMPGpXxu9YYuMIM7+Pu4Tz8+DqMYFzddWK7EyyI7dbMFX39SM8sUwmI8h9L+gK4n0LmFkm+fAzE+3UFZ9KX+SWKMzQxm/BOOHGVTqN3DC122pMFidKEkVrzNW2hTTZwJeHXyr2zzZ8Vo5Gcnp2IUDNqwIh3VgtMxXbOkwGL0YHffxb8uHCSOq7It1K+pjRVjuhh9517CEYdq6nC58Qi9RguWZf05rNR6MCQTGA3gpN6E5Q1Vt7DhwurOLbhPr2SgM4L2Nw/WKrxKnMPStgdH3RHVhxlB7+IW1rdmsZ3AqHsHVceFItlyX04H/5ENk8U2CfbXNbgUgpePH6lO4+Za9r96c58sxgx+VKusuAf6suHBKu9Fsc1a/Q56z2RI6GGaV+lIiYjyFYZX6PftYAtXrDSh+m2AT9SYQSPvKsYS7jWFM8u1a3BqTSj/owxe+m01u7AUUSTOHs78nUt6ARefpw/sMNgObGDShCuFuB8LotzwJY4M4esXseJgHdvWW7BCgxW1xb7ggC+FbbEvFRQb92W3GyRnWWyTCcTocXJSaUOPagM4RAu7cJuArH5U92tCpab8I8dlz4MyC1nbMuhifDhTfpd72K2WfJ5zxoP+BKd038A/wb0LTgceyFIyRSOC7GLkDXb4RXgpFw650oQ17oMjZ6Soi86XwLmYEIWqHo6VU5bCK6vAf05gzw4sODjA4Zn+jANKzw1E8wgHuNLKLYa2KrxctGARV4yVQ04wstimERbWBNqJoVrZlfZ/+P9HxDiHH/2VbRNX5cgJCE52f6yD68YEhn2uhelhoylFJUUX2a4FIl0KJ2tpGiFmF+P4Nzzc3MKav+L8ogqEH2TYnI/OWtK+hC9jSnhYeEHoGtDRRlwEgh7aFzGzd27E3fgY5BIOTLqgiRMkWzTIqUkEk8U2DU1YSaFahmicOB0hjrgYs/sxEGNkrAgWXrhudjHyGIWiY5jxPVREGzGGLNQUjTBGMU4rS1++G5fghZ3vsb2Ct6faVK8SQhq2XRVtnTu1CvK9+HcauCLIvceWFhJ89L3XCEO66k8B9zZOowftwW9ZEyeLbRq6sEyhmkK0P1BxMWb2I8JixMUrDopf1M0lRj7uSfT7BFz92SkaYYxiNJ4zbregetgBt/8v2YcwdViCA7oj7pkwgwTjnppFPDjkpPi9DLCtEIvYz8QK7mH0GYzhe1eG31ARG/paG5MSzU1ZbBPRhWUK1cpGhejgd2QSZfUjosSY0OYtYuzSVq1+Txfi9I5VqK5cUHhL1EjAHAmMgfcQI8+yecQ4tejPf4WXQR+ODjFbl2INip7wZLM1EV/l9FD9cuWFQrTgDWIMrVZ5EKO/kn++GGcILxxqQ2FaDzeJcNsUp8zEeAjecUtlzuseuGnnp1lsJQYxcqjeaqNwnsGt4f+RvVS8TWY/Ih8mxqlh+hmTGNXfWJj+TDHOuvEOPpNxUmJOYEQmW8BQuS5XJRq0WZOMPvYTtxyLmKXH+4IZ5pZ4Lg1eFttUTGLkUI2JV1dt9qOfCeNtsvvxA8WYIYHxs/s8iHG2I4kmnPgvNZEZs+jHEq54kRbPKFQSgcqeU2yxbnSlzgmL2x3aR4Wzb+2QmN/BF3YW2zRMYkQoVJcdcUQijp/ousTQJrMf31mMWuIx09HOXmji5EKMyLTD2srFE1ky4UPvJlREMpJ4kD2EE/2AHBOX4GuMOAYKzrX8g2wsKzuqL8GBOg70nLbJJIjRFzuWmKjNbbL68V3E6PdFfLXB9z/jo6Nph97auW9exCiZ93MgDxgW8YnvoKMLVxD/dChC+Vq9A17s/p/3OTAqRg7Vps+DSW2QzJ8D3yrGCQwxwvhfbSL7xOyfA2cUo8XyuVgxWnKDFaMlN1gxWnKDFaMlN1gxWnKDFaMlJwD8Dxh74O0kAcwzAAAAAElFTkSuQmCC" InformativeScreenshot="6f5c3a3bbb470f2b92a8c7b7ed4c8dae.png" Reference="ao86_PT9xkmS2L7lE3WumQ/PBlTxi_mvUqSYoUxuPEDHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Pay Cycle Manager' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
                               <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                 <uix:Target DesignTimeRectangle="811, 134, 259, 33" ElementType="Text" FriendlyName="'Pay Cycle Manager'" FullSelectorArgument="&lt;webctrl parentid='pagetitleheader' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='pagetitleheader' tag='SPAN' type='' class='titletext' aaname='Pay Cycle Manager' check:innerText='Pay Cycle Manager' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
@@ -304,10 +353,11 @@
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.IfNotExists>
-                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,395.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message: Server Dropdown Not Found" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;ServerDropdownNotFound&quot;).ToString]" />
