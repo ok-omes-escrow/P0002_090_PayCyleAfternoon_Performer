@@ -22944,9 +22944,9 @@
     "restore": {
       "projectUniqueName": "P0002_090_PayCycleAfternoon_Performer",
       "projectName": "P0002_090_PayCycleAfternoon_Performer",
-      "projectPath": "C:\\Users\\55651C\\Documents\\UiPath\\P0002_090_PayCyleAfternoon_Performer\\.local",
+      "projectPath": "C:\\Users\\55651C\\Documents\\GitHub\\P0002_090_PayCyleAfternoon_Performer\\.local",
       "packagesPath": "C:\\Users\\55651C\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55651C\\Documents\\UiPath\\P0002_090_PayCyleAfternoon_Performer\\.local"
+      "outputPath": "C:\\Users\\55651C\\Documents\\GitHub\\P0002_090_PayCyleAfternoon_Performer\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
