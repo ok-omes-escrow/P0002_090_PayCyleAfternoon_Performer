@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>702.6666666666666,3440.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>680.6666666666666,1119.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SelectServerAndProcess_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,15 +101,15 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="712.6666666666666,3376" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Sequence: SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="690.6666666666666,1054.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch:SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="650.6666666666666,3265.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch:SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="628.6666666666666,944" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow selects server and Processes the record which changes the paycyle status to running and creates an instance number." DisplayName="SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="612,3026" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow selects server and Processes the record which changes the paycyle status to running and creates an instance number." DisplayName="SelectServerAndProcess" sap:VirtualizedContainerService.HintSize="496,704.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strURL" />
             <Variable x:TypeArguments="x:Boolean" Name="boolDropdownAppears" />
@@ -121,14 +121,14 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="550,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectServerandProcessPaycycleWorkflowStarted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectServerandProcessPaycycleWorkflowStarted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign DisplayName="Assign: PeopleSoft Paycycle Manager URL" sap:VirtualizedContainerService.HintSize="550,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign: PeopleSoft Paycycle Manager URL" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
@@ -136,7 +136,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleManagerURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="550,2375.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -387,12 +387,12 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="528,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectServerandProcessPaycycleWorkflowCompleted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SelectServerandProcessPaycycleWorkflowCompleted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

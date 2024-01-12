@@ -136,7 +136,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaymentSelectionCriteriaURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="988,1196.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="988,1196.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>

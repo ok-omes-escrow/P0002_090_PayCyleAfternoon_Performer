@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>802.6666666666666,6002</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.6666666666666,1292</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ValidateDatesAndCheckPaycycle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,15 +131,15 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="812.6666666666666,5937.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Sequence: ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="596.6666666666666,1227.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="750.6666666666666,5826.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="534.6666666666666,1116.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow validates and enters dates in all the 7 fields in the selection criteria page, condition to enter the dates varies and hence we are using a reusable library to calculate dates which are not on weekens or non working days." DisplayName="ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="712,5587.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow validates and enters dates in all the 7 fields in the selection criteria page, condition to enter the dates varies and hence we are using a reusable library to calculate dates which are not on weekens or non working days." DisplayName="ValidateDatesAndCheckPaycycle" sap:VirtualizedContainerService.HintSize="496,877.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strPreviousDay" />
             <Variable x:TypeArguments="x:String" Name="strCurrentDay" />
@@ -152,8 +152,8 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="650,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CheckPaycycleandValidateDateWorkflowStarted&quot;).ToString]" />
-          <h:Get_Previous_Working_Day sap2010:Annotation.AnnotationText="This is the reusable to get current and previous dates but only for working days." DisplayName="Get Previous Working Day : Current and Previous" sap:VirtualizedContainerService.HintSize="650,116" sap2010:WorkflowViewState.IdRef="Get_Previous_Working_Day_1" in_excMsgInvalidCalendarName="[in_Config(&quot;HolidayCalendarNameErrorMessage&quot;).ToString]" in_excMsgMaxLoopCounter="[in_Config(&quot;HolidayCalendarLoopErrorMessage&quot;).ToString]" in_intMaxLoopCounter="[cint(in_Config(&quot;CalendarMaxloop&quot;))]" in_strCalendarName="[in_Config(&quot;CalenderNameOrchestrator&quot;).ToString]" in_strInputDate="[in_Config(&quot;DateForCalender&quot;).ToString]" out_strCurrentWorkingDay="[strCurrentDay]" out_strPreviousWorkingDay="[strPreviousDay]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CheckPaycycleandValidateDateWorkflowStarted&quot;).ToString]" />
+          <h:Get_Previous_Working_Day sap2010:Annotation.AnnotationText="This is the reusable to get current and previous dates but only for working days." DisplayName="Get Previous Working Day : Current and Previous" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Get_Previous_Working_Day_1" in_excMsgInvalidCalendarName="[in_Config(&quot;HolidayCalendarNameErrorMessage&quot;).ToString]" in_excMsgMaxLoopCounter="[in_Config(&quot;HolidayCalendarLoopErrorMessage&quot;).ToString]" in_intMaxLoopCounter="[cint(in_Config(&quot;CalendarMaxloop&quot;))]" in_strCalendarName="[in_Config(&quot;CalenderNameOrchestrator&quot;).ToString]" in_strInputDate="[in_Config(&quot;DateForCalender&quot;).ToString]" out_strCurrentWorkingDay="[strCurrentDay]" out_strPreviousWorkingDay="[strPreviousDay]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -162,7 +162,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </h:Get_Previous_Working_Day>
-          <Assign DisplayName="Assign: Peoplesoft Payment Selection Criteria URL" sap:VirtualizedContainerService.HintSize="650,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign DisplayName="Assign: Peoplesoft Payment Selection Criteria URL" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
@@ -170,7 +170,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaymentSelectionCriteriaURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="650,4780.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="d7a4cc06-8d5a-402d-803b-124601f9a2d2" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d7a4cc06-8d5a-402d-803b-124601f9a2d2" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -485,14 +485,14 @@
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.IfNotExists>
-                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,387.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,395.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message: Dates Tab Not Found" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;DatesTabNotFound&quot;).ToString]" />
+                      <ui:LogMessage DisplayName="Log Message: Dates Tab Not Found" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;DatesTabNotFound&quot;).ToString]" />
                       <Throw DisplayName="Throw SE: Dates Tab Not Found" Exception="[new System.Exception(in_Config(&quot;DatesTabNotFoundSE&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="Throw_4" />
                     </Sequence>
                   </uix:NCheckState.IfNotExists>
@@ -520,16 +520,16 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="650,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CheckPaycycleandValidateDateWorkflowCompleted&quot;).ToString]" />
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CheckPaycycleandValidateDateWorkflowCompleted&quot;).ToString]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="716.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1202.6666666666667,3623.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>586.6666666666666,1355.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,16 +125,16 @@
       <AssemblyReference>LIB_PeopleSoft_9.2</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="1212.6666666666667,3558.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="596.6666666666666,1290.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="1150.6666666666667,3448" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="534.6666666666666,1180" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="1112,3208.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="496,940.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessListData" />
             <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -146,14 +146,14 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="1050,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowStarted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowStarted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign DisplayName="Assign : Out Argument Default value" sap:VirtualizedContainerService.HintSize="1050,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign : Out Argument Default value" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_strInstanceNumber]</OutArgument>
             </Assign.To>
@@ -163,7 +163,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="1050,54" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_ProcessMonitorURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
+          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_ProcessMonitorURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -171,7 +171,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </l:Refresh_Process_Monitor>
-          <Assign DisplayName="Assign: PeopleSoft Process Monitor URL" sap:VirtualizedContainerService.HintSize="1050,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign: PeopleSoft Process Monitor URL" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
@@ -179,7 +179,7 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_ProcessMonitorURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="1050,2338.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -374,12 +374,12 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="1050,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowCompleted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowCompleted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +389,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1116.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
