@@ -1,0 +1,309 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "strConfigFilePath&Sequence_17",
+        "boolConfigFileExists&Sequence_17",
+        "ShouldStop&Sequence_25",
+        "strInstanceNumber&Sequence_28",
+        "strScreenshotPath&Sequence_43",
+        "strMailBody&Sequence_44",
+        "strMailSubject&Sequence_44",
+        "strEmailRecipient&Sequence_44",
+        "strEmailCC&Sequence_44"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config",
+        "out_strInstanceNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/ValidateDatesAndCheckPaycycle.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPreviousDay&Sequence_1",
+        "strCurrentDay&Sequence_1",
+        "strURL&Sequence_1",
+        "strPaycycleName&Sequence_12",
+        "strPayFromDate&Sequence_12",
+        "intDateDiff&Sequence_12",
+        "strNewPayFromDate&Sequence_13",
+        "strPayFromDateWorkingday&Sequence_13"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strPaycycleName",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/SelectServerAndProcess.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strURL&Sequence_9",
+        "boolDropdownAppears&Sequence_9",
+        "strPaymentSelectionData&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/UpdateUserIDandGetInstance.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_ProcessListData&Sequence_3",
+        "strURL&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_strInstanceNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/CheckCreatedStatusandApprovePaycycle.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPaycycleStatus&Sequence_32",
+        "boolPaycyleStatus&Sequence_32",
+        "boolRetryScopeResult&Sequence_32",
+        "strURL&Sequence_32"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/CheckAndCreateSharepointFolders.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolYearFolderExists&Sequence_1",
+        "boolYearFolderCreated&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strSharePointFolderPath",
+        "in_strFolderName",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/SendEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolAttachmentFileExists&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strMailSubject",
+        "in_strMailAttachment",
+        "in_strMailType",
+        "in_strMailBody",
+        "in_strMailRecepients",
+        "in_strMailRecepientsCC",
+        "in_strExceptionType",
+        "in_Config",
+        "in_strExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/GetMailDetails.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strExceptionNumber&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strPaycycleName",
+        "in_Config",
+        "in_strExceptionMessage",
+        "out_strEmailBody",
+        "out_strEmailSubject",
+        "out_strEmailRecipient",
+        "out_strEmailCC"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/UploadFilesToSharepoint.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolFileUploaded&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strUploadFileLocalPath",
+        "in_Config",
+        "in_strSharePointFolderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/CreateLocalFolderandSummaryFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolLocalFolderExists&Sequence_1",
+        "strLocalFolderPath&Sequence_1",
+        "strLocalYearFolderPath&Sequence_1",
+        "strLocalMonthFolderPath&Sequence_1",
+        "strLocalDayFolderPath&Sequence_1",
+        "boolLocalYearFolderExists&Sequence_1",
+        "boolLocalMonthFolderExists&Sequence_1",
+        "boolSummaryFileExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strSummaryFilePath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strMailBody&Sequence_28",
+        "strEmailCC&Sequence_28",
+        "strEmailRecipient&Sequence_28",
+        "strMailSubject&Sequence_28",
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_Config",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions",
+        "in_strInstanceNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/UpdateSummaryFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSummaryFilePath&Sequence_6",
+        "boolFolderExists&Sequence_6",
+        "boolSummaryFileExists&Sequence_6",
+        "dt_SummaryReportData&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_strInstanceNumber",
+        "in_strPaycycle",
+        "in_strStatus",
+        "in_strComments"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/ApproveAllRecords.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPaycycleOutputTypeDropdownData&Sequence_10",
+        "strServerNameRow&Sequence_5",
+        "strURL&Sequence_5",
+        "intServerNameRow&Sequence_8",
+        "strRowNumber&Sequence_8",
+        "intServerNameTotalRows&Sequence_8",
+        "strStatusCompleted&Sequence_8",
+        "strPaycycleDropdownData&Sequence_10"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/LogoutPeopleSoft.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strURL&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
