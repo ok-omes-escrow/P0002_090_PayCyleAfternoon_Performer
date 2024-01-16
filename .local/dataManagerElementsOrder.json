@@ -221,10 +221,11 @@
       "Path": "Framework/SetTransactionStatus.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strMailBody&Sequence_28",
-        "strEmailCC&Sequence_28",
-        "strEmailRecipient&Sequence_28",
-        "strMailSubject&Sequence_28",
+        "strMailBody&Flowchart_2",
+        "strEmailCC&Flowchart_2",
+        "strEmailRecipient&Flowchart_2",
+        "strMailSubject&Flowchart_2",
+        "strExceptionComments&Sequence_17",
         "QueueRetry&Sequence_17",
         "ScreenshotPath&Sequence_17"
       ],
@@ -267,20 +268,18 @@
       "Path": "Process Workflows/ApproveAllRecords.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "test&Sequence_67",
-        "strPaycycleDropdownData&Sequence_67",
-        "strPaycycleOutputTypeData&Sequence_67",
-        "intTotalPageShifts&Sequence_30",
-        "intPageShiftCount&Sequence_31",
-        "intExtraRecords&Sequence_30",
-        "strServerNameRow&Sequence_30",
-        "strURL&Sequence_30",
-        "intServerNameRow&Sequence_31",
-        "strRowNumber&Sequence_31",
-        "intServerNameTotalRows&Sequence_31",
-        "strStatusCompleted&Sequence_31"
+        "strServerNameRow&Sequence_76",
+        "strURL&Sequence_76",
+        "intTotalPageShifts&Sequence_76",
+        "intExtraRecords&Sequence_76",
+        "intServerNameTotalRows&Sequence_76",
+        "intServerNameRow&Sequence_76",
+        "intPageShiftCount&Sequence_76",
+        "strPaycycleDropdownData&Sequence_78",
+        "strPaycycleOutputTypeData&Sequence_78"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_intServerNameTotalRows",
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -364,6 +363,22 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_strPaycycleName",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/ApprovePaycycleRecordsAndCheckCompletedStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strURL&Sequence_30",
+        "intServerNameRow&Sequence_31",
+        "strRowNumber&Sequence_31",
+        "intServerNameTotalRows&Sequence_31",
+        "strStatusCompleted&Sequence_31"
+      ],
+      "ArgumentsSectionElementsOrder": [
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
