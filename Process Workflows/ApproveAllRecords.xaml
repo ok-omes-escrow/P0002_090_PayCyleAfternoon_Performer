@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4924</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4797.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,7 +110,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow is where all the results are being approved by selecting the server, output type and clicking on Process for each row." DisplayName="ApproveAllRecords" sap:VirtualizedContainerService.HintSize="764.6666666666666,4859.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_76">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow is where all the results are being approved by selecting the server, output type and clicking on Process for each row." DisplayName="ApproveAllRecords" sap:VirtualizedContainerService.HintSize="764.6666666666666,4732.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_76">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strServerNameRow" />
       <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -134,7 +134,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="702.6666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[in_intServerNameTotalRows]" />
     <Assign DisplayName="Assign: PeopleSoft Paycycle Manager URL" sap:VirtualizedContainerService.HintSize="702.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
