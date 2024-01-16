@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "boolInitException&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -208,11 +209,9 @@
         "strLocalMonthFolderPath&Sequence_1",
         "strLocalDayFolderPath&Sequence_1",
         "boolLocalYearFolderExists&Sequence_1",
-        "boolLocalMonthFolderExists&Sequence_1",
-        "boolSummaryFileExists&Sequence_1"
+        "boolLocalMonthFolderExists&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_strSummaryFilePath",
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -249,8 +248,8 @@
       "Path": "Process Workflows/UpdateSummaryFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strSummaryFileCellValue&Sequence_9",
         "strSummaryFilePath&Sequence_6",
-        "boolFolderExists&Sequence_6",
         "boolSummaryFileExists&Sequence_6",
         "dt_SummaryReportData&Sequence_6"
       ],
@@ -268,14 +267,18 @@
       "Path": "Process Workflows/ApproveAllRecords.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "strPaycycleOutputTypeDropdownData&Sequence_10",
-        "strServerNameRow&Sequence_5",
-        "strURL&Sequence_5",
-        "intServerNameRow&Sequence_8",
-        "strRowNumber&Sequence_8",
-        "intServerNameTotalRows&Sequence_8",
-        "strStatusCompleted&Sequence_8",
-        "strPaycycleDropdownData&Sequence_10"
+        "test&Sequence_67",
+        "strPaycycleDropdownData&Sequence_67",
+        "strPaycycleOutputTypeData&Sequence_67",
+        "intTotalPageShifts&Sequence_30",
+        "intPageShiftCount&Sequence_31",
+        "intExtraRecords&Sequence_30",
+        "strServerNameRow&Sequence_30",
+        "strURL&Sequence_30",
+        "intServerNameRow&Sequence_31",
+        "strRowNumber&Sequence_31",
+        "intServerNameTotalRows&Sequence_31",
+        "strStatusCompleted&Sequence_31"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_Config"
@@ -300,6 +303,67 @@
         "strURL&Sequence_5"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/LoginToPeopleSoft.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strPassword&Sequence_11",
+        "strUsername&Sequence_11",
+        "boolLoginException&Sequence_11",
+        "strExceptionMessage&Sequence_11",
+        "strScreenshotPath&TryCatch_8"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/NavigateToPaycyclePage.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strURL&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process Workflows/SelectPayCycle.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strURL&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strPaycycleName",
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],

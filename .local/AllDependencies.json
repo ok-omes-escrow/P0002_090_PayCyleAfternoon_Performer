@@ -224,15 +224,15 @@
           }
         }
       },
-      "HolidayCalendar_1.0/0.0.1-alpha.4": {
+      "HolidayCalendar_1.0/0.0.1-alpha.9": {
         "type": "package",
         "dependencies": {
-          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.4",
+          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.9",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.WebAPI.Activities": "1.18.0"
         }
       },
-      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.4": {
+      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -243,8 +243,9 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/Holiday Calendar.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_39603294.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_61617675.dll": {}
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.38": {
@@ -5975,15 +5976,15 @@
           }
         }
       },
-      "HolidayCalendar_1.0/0.0.1-alpha.4": {
+      "HolidayCalendar_1.0/0.0.1-alpha.9": {
         "type": "package",
         "dependencies": {
-          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.4",
+          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.9",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.WebAPI.Activities": "1.18.0"
         }
       },
-      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.4": {
+      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -5994,8 +5995,9 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/Holiday Calendar.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_39603294.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_61617675.dll": {}
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.38": {
@@ -11660,15 +11662,17 @@
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.xml"
       ]
     },
-    "HolidayCalendar_1.0/0.0.1-alpha.4": {
-      "sha512": "Z9BXu319Gb9Nc0Lz/4Is9Oed3zyHyk/YJlNvspbqxLPlNvlfHBKYJeig0L1JReV/jqW9sixYdO/qDiV8QNT6Ug==",
+    "HolidayCalendar_1.0/0.0.1-alpha.9": {
+      "sha512": "OHFN/4D7795Zqk2qThFOZL0DmCH6qNf9jo/U3nPmWob8Jx8fsaMnJ/i+i/Ncr8v8VYyXhA61jl2I4iB3DPwhXA==",
       "type": "package",
-      "path": "holidaycalendar_1.0/0.0.1-alpha.4",
+      "path": "holidaycalendar_1.0/0.0.1-alpha.9",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
         "content/.project/design.json",
         "content/.settings/Release/settings-9e9290da.json",
+        "content/Get Next Working Day.xaml",
+        "content/Get Next Working Day.xaml.json",
         "content/Get Previous Working Day.xaml",
         "content/Get Previous Working Day.xaml.json",
         "content/LocateNextworkingDayCurrentDate-Flowchart.xaml",
@@ -11678,25 +11682,26 @@
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "holidaycalendar_1.0.0.0.1-alpha.4.nupkg.sha512",
+        "holidaycalendar_1.0.0.0.1-alpha.9.nupkg.sha512",
         "holidaycalendar_1.0.nuspec"
       ]
     },
-    "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.4": {
-      "sha512": "YJYvuG09M/3GP/AR2Ywb6JOFwbwTJzdeEFJ38rKjZrViyisETmx/ncIUOsW4dw3lXk1fiU/tAL2mRfBYny7X8Q==",
+    "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
+      "sha512": "NwDmdGZFTCtW3DSQoxxDi7cspKE7SJBuV9wzAKVRuLPzgun4xCPJ4kWwCEQ3cLrDGEuoEkt9oHxCaeX8TWGI2A==",
       "type": "package",
-      "path": "holidaycalendar_1.0.library.runtime/0.0.1-alpha.4",
+      "path": "holidaycalendar_1.0.library.runtime/0.0.1-alpha.9",
       "files": [
         ".nupkg.metadata",
         "content/.settings/Release/settings-9e9290da.json",
         "content/README.md",
         "content/bindings.json",
         "content/bindings_v2.json",
-        "holidaycalendar_1.0.library.runtime.0.0.1-alpha.4.nupkg.sha512",
+        "holidaycalendar_1.0.library.runtime.0.0.1-alpha.9.nupkg.sha512",
         "holidaycalendar_1.0.library.runtime.nuspec",
         "lib/net6.0-windows7.0/Holiday Calendar.dll",
-        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_39603294.dll",
-        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_61617675.dll"
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll",
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll",
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll"
       ]
     },
     "HtmlAgilityPack/1.11.38": {
@@ -22926,7 +22931,7 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "HolidayCalendar_1.0 >= 0.0.1-alpha.4 <= 0.0.1-alpha.4",
+      "HolidayCalendar_1.0 >= 0.0.1-alpha.9 <= 0.0.1-alpha.9",
       "LIB_O365MailActivities_00.00 >= 1.0.2 <= 1.0.2",
       "LIB_O365_Sharepoint_00.00 >= 1.0.2 <= 1.0.2",
       "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.31 <= 1.0.1-alpha.31",
@@ -22955,7 +22960,7 @@
           "HolidayCalendar_1.0": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[0.0.1-alpha.4, 0.0.1-alpha.4]"
+            "version": "[0.0.1-alpha.9, 0.0.1-alpha.9]"
           },
           "LIB_O365MailActivities_00.00": {
             "include": "Runtime",

@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>586.6666666666666,1355.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,3623.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,16 +125,16 @@
       <AssemblyReference>LIB_PeopleSoft_9.2</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="596.6666666666666,1290.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="752.6666666666666,3558.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="534.6666666666666,1180" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="690.6666666666666,3448" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="496,940.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="652,3208.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessListData" />
             <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -146,14 +146,14 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowStarted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="590,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowStarted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign DisplayName="Assign : Out Argument Default value" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign : Out Argument Default value" sap:VirtualizedContainerService.HintSize="590,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_strInstanceNumber]</OutArgument>
             </Assign.To>
@@ -163,7 +163,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_ProcessMonitorURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
+          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="590,54" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_ProcessMonitorURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -171,7 +171,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </l:Refresh_Process_Monitor>
-          <Assign DisplayName="Assign: PeopleSoft Process Monitor URL" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign: PeopleSoft Process Monitor URL" sap:VirtualizedContainerService.HintSize="590,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
@@ -179,19 +179,19 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_ProcessMonitorURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="590,2338.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="1016,2119.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="556,2119.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="954,715.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,715.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,463.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -240,7 +240,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping through each elementof the table to check which instance number to be fetched." DataTable="[dt_ProcessListData]" DisplayName="For Each Row in Data Table: Process List Table" sap:VirtualizedContainerService.HintSize="954,99.33333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping through each elementof the table to check which instance number to be fetched." DataTable="[dt_ProcessListData]" DisplayName="For Each Row in Data Table: Process List Table" sap:VirtualizedContainerService.HintSize="494,99.33333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
@@ -292,7 +292,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="[cdbl(in_Config(&quot;MediumDelay&quot;))]" DisplayName="Click 'Pay Cycle Manager Back Button'" sap:VirtualizedContainerService.HintSize="954,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="[cdbl(in_Config(&quot;MediumDelay&quot;))]" DisplayName="Click 'Pay Cycle Manager Back Button'" sap:VirtualizedContainerService.HintSize="494,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psp/SOKLFTSTNSS/EMPLOYEE/ERP/c/CREATE_PAYMENTS.PYCYCL_MGR.GBL?PAY_CYCLE=WF" ContentHash="7qhQ7M5Kg0OzCi-0ThG3FA" DesignTimeRectangle="70, 141, 182, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Pay Cycle Manager Back Button'" FullSelectorArgument="&lt;webctrl parentid='classicbackbuttoncontainer' tag='SPAN' class='ps-button-wrapper' innertext='Pay Cycle Manager' /&gt;&lt;webctrl tag='SPAN' aaname='Pay Cycle Manager' class='ps-text' parentid='PT_WORK_PT_BUTTON_BACK' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='classicbackbuttoncontainer' tag='SPAN' class='ps-button-wrapper' innertext='Pay Cycle Manager' /&gt;&lt;webctrl tag='SPAN' aaname='Pay Cycle Manager' class='ps-text' parentid='PT_WORK_PT_BUTTON_BACK' type='' check:text='Pay Cycle Manager' /&gt;" Guid="fadee70d-957f-4668-8fbf-232b5943e4c7" ImageBase64="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" InformativeScreenshot="84a8616b427ed1899f74a670ef8754b9.png" Reference="ao86_PT9xkmS2L7lE3WumQ/78ZgyaOI3UiXvY8x6uBwRQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Process Monitor' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -303,7 +303,7 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'No'" sap:VirtualizedContainerService.HintSize="954,909.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'No'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,909.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears : Save changes popup" sap:VirtualizedContainerService.HintSize="450,688" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
@@ -374,12 +374,12 @@
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowCompleted&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="590,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UpdateUserIDandRefreshWorkflowCompleted&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +389,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="656.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
