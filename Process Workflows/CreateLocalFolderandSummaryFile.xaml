@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>670.6666666666666,2894</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,2894</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateSharepointConnectionAndFolders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -169,7 +169,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("OutputFolder").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -177,7 +177,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalYearFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("OutputFolder").ToString+"\"+in_Config("FolderNameYear").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -185,7 +185,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalMonthFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("OutputFolder").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -193,7 +193,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalDayFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("OutputFolder").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -362,7 +362,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope: Summary FIle" sap:VirtualizedContainerService.HintSize="518,532.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope: Summary FIle" sap:VirtualizedContainerService.HintSize="518,532.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
             <ueab:ExcelProcessScopeX.Body>
               <ActivityAction x:TypeArguments="ui:IExcelProcess">
                 <ActivityAction.Argument>
