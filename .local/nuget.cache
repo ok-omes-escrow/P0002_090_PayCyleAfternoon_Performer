@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZwS2N+2Ac8e7Rf9m4q+3esfme9JP3bpwVT63Jdfd1coSjNCtPstW1h0B5YR/MMMpopoh6fgkW2e0VwOzxLKaWg==",
+  "dgSpecHash": "JwdHVFufjfDCSARnnkaKrZdLs287Pkv/2LPuMc1saEWjtPS0iR63g44/VfLgk/kvAyiirIdUf2iWn+fIit/lsw==",
   "success": true,
   "projectFilePath": "C:\\Users\\55651C\\Documents\\GitHub\\P0002_090_PayCyleAfternoon_Performer\\.local\\",
   "expectedPackageFiles": [
@@ -23,8 +23,8 @@
     "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00\\1.0.2\\lib_o365mailactivities_00.00.1.0.2.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00.library.runtime\\1.0.2\\lib_o365mailactivities_00.00.library.runtime.1.0.2.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_o365_sharepoint_00.00\\1.0.2\\lib_o365_sharepoint_00.00.1.0.2.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2\\1.0.1-alpha.31\\lib_peoplesoft_9.2.1.0.1-alpha.31.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2.library.runtime\\1.0.1-alpha.31\\lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.31.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2\\1.0.1-alpha.32\\lib_peoplesoft_9.2.1.0.1-alpha.32.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2.library.runtime\\1.0.1-alpha.32\\lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.32.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\mailkit\\3.1.1\\mailkit.3.1.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\microsoft.applicationinsights\\2.15.0\\microsoft.applicationinsights.2.15.0.nupkg.sha512",
