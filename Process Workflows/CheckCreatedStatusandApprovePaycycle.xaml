@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4650.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,5014.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,7 +109,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the status for the paycycle changes from running to Created , if it changes we need to approve the paycycle else we mark it as exception." DisplayName="CheckCreatedStatusandApprovePaycycle" sap:VirtualizedContainerService.HintSize="694,4586" sap2010:WorkflowViewState.IdRef="Sequence_32">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the status for the paycycle changes from running to Created , if it changes we need to approve the paycycle else we mark it as exception." DisplayName="CheckCreatedStatusandApprovePaycycle" sap:VirtualizedContainerService.HintSize="694,4950" sap2010:WorkflowViewState.IdRef="Sequence_32">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPaycycleStatus" />
       <Variable x:TypeArguments="x:Boolean" Name="boolPaycyleStatus" />
@@ -143,7 +143,7 @@
         <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleManagerURL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:RetryScope sap2010:Annotation.AnnotationText="This retry scope checks for created status and if found it exists , if not found it retries according to the mentioned times and then exists with the exception as the condition is not met." ContinueOnError="[convert.ToBoolean(in_Config(&quot;RunningStatusRetryScopeContinueOnError&quot;))]" DisplayName="Retry Scope: Check Running Status" sap:VirtualizedContainerService.HintSize="632,2134" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[cint(in_Config(&quot;RunningPaycycleRetries&quot;))]" RetryInterval="[TimeSpan.Parse(in_Config(&quot;DelayRunningRecords&quot;).ToString)]">
@@ -302,7 +302,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <If sap2010:Annotation.AnnotationText="checks if retry scope returns true that means the condition was met and proceeds with approving the paycycle else an exception is thrown." Condition="[boolRetryScopeResult]" DisplayName="If Record was created" sap:VirtualizedContainerService.HintSize="632,1636" sap2010:WorkflowViewState.IdRef="If_4">
+    <If sap2010:Annotation.AnnotationText="checks if retry scope returns true that means the condition was met and proceeds with approving the paycycle else an exception is thrown." Condition="[boolRetryScopeResult]" DisplayName="If Record was created" sap:VirtualizedContainerService.HintSize="632,2000" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -408,7 +408,7 @@
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaycycleApprovalURL").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Pay Cycle Approval" sap:VirtualizedContainerService.HintSize="528,915.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Timeout="[cdbl(in_Config(&quot;TargetAppearWaitLong&quot;))]" Version="V2">
@@ -499,7 +499,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message: Paycycle Not Approved" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;PaycycleStatusNotChanged&quot;).ToString]" />
-          <Throw DisplayName="Throw SE: Status Not changed" Exception="[new SystemException(in_Config(&quot;PaycycleStatusNotChangedSE_3&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_7">
+          <Throw DisplayName="Throw SE: Status Not changed" Exception="[new SystemException(in_Config(&quot;PaycycleStatusNotChangedSE_1&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

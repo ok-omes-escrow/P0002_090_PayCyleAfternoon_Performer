@@ -130,7 +130,7 @@
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_HomepageURL").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Homepage" sap:VirtualizedContainerService.HintSize="1050,1603.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9992a0dc-554d-4beb-844f-c02a5fd0d19e" Version="V2">

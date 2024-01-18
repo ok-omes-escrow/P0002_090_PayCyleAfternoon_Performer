@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,6782</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,6782</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ValidateDatesAndCheckPaycycle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -167,7 +167,7 @@
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_PaymentSelectionCriteriaURL").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Payment Selection Criteria" sap:VirtualizedContainerService.HintSize="650,5170.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d7a4cc06-8d5a-402d-803b-124601f9a2d2" Version="V2">

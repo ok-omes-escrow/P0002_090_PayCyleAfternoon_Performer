@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,4725.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,4133.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,16 +126,16 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="802.6666666666666,4660.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="802.6666666666666,4068.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="740.6666666666666,4550" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="740.6666666666666,3958" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="702,4310.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="702,3718.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessListData" />
             <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -164,10 +164,10 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="640,54" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_ProcessMonitorURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
+          <l:Refresh_Process_Monitor DisplayName="Refresh Process Monitor: Enter UserID Details (Refresh_Process_Monitor)" sap:VirtualizedContainerService.HintSize="640,302.6666666666667" sap2010:WorkflowViewState.IdRef="Refresh_Process_Monitor_3" in_intDuration="[cint(in_Config(&quot;RefreshMonitorDuration&quot;))]" in_strDurationType="[in_Config(&quot;RefreshMonitorDurationType&quot;).ToString]" in_strFilterUserID="[in_Config(&quot;RefreshMonitorUserID&quot;).ToString]" in_strPeoplesoftURL="[in_Config(&quot;PeopleSoft_NavigationURL&quot;).ToString]" in_strRefreshButtonException="[in_Config(&quot;RefreshButtonNotFoundSE&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -177,49 +177,27 @@
               <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_ProcessMonitorURL").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="640,3440.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="640,2600" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="606,3221.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="606,2380.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="[cdbl(in_Config(&quot;SmallDelay&quot;))]" DisplayName="Type Into 'Process Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="544,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[in_Config(&quot;InstanceNumberProcessName&quot;).ToString]" Version="V3">
-                    <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="https://soklfpub-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS/EMPLOYEE/ERP/c/PROCESSMONITOR.PROCESSMONITOR.GBL?Page=PMN_PRCSLIST&amp;Action=U" ContentHash="Utuy4ed7_U6O3B8hSsiqgA" DesignTimeRectangle="484, 322, 257, 46" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT PMN_FILTER_WRK_PR…'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PMN_DERIVED_PTPRCSGRPBOXLBLS' tag='TABLE' /&gt;&lt;webctrl id='PMN_FILTER_WRK_PRCSNAME' tag='INPUT' aaname='Name' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PMN_DERIVED_PTPRCSGRPBOXLBLS' tag='TABLE' /&gt;&lt;webctrl id='PMN_FILTER_WRK_PRCSNAME' tag='INPUT' aaname='Name' type='text' class='PSEDITBOX PTCPEDITBOXWITHICON ' /&gt;" Guid="ba01d2db-952c-4faf-95fc-efee2afb78db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQUAAAAyCAYAAABVns4wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAANWSURBVHhe7dzPK3RRHMfx5w/1MzYWslVkZ1hoJJlENmRDRhMlibIgv2IhjWeaZmGBJMrOz+/T9zpzu+fea+KOxXnufb/qW+qca/f9dH7cO38EAAIIBQCWSCiU/1aluLYpi8slyeULFEWlsLS/tc+138OsUGg0EUC6BBcAQX4o1CcAyJbwQsAPBVYIQDZVqjVrQeCHQngJASA7gv3vh4IePgDIpmD/EwoACAUANkIBgIVQAGAhFADHvb29Sblclp2dHVlfX5fDw0O5v783o7+PUAAcdXt7K9PT09LV1SUtLS2RGhgYkN3dXfn4+DBP/A5CAXDQ0dGRtLe3x4ZBuHK5nDw/P5snm0coAI7Z39+Pbf5GNTw87G0zfgOhADikWq1Ka2trpOl7e3tlaWlJVlZWZGZmJnbO7Oys+S/NIRQAhwwODlqN3tHR4W0l3t/fzYxPT09PUigUrLlatVrNzEiOUAAcUalUIk2ugfAVPWDU84TgfD2YbBahADhCtwfBBs/n82bka3d3d9YzPT09ZiQ5QgFwxMTEhNXget34Hf39/dZzDw8PZiQZQgFwxOjoqNXcJycnZqQxXVEEn9PDymYQCoAjpqamrObe2toyI40NDQ1Zzz0+PpqRZAgFwBGrq6tWc4+Pj5uRr+lWIXg92d3dbUaSIxQAR+h1YjAUtK6ursxolN4+jIyMWPO5fQBSJrwV6Ovr864qw15eXiLbDa3Ly0szIzlCAXCIHhK2tbVFmn1sbEw2Nja89xbm5+e9NxzDc7QWFhbMf0qOUAAcs7e3F9vw3625ubmmvpwkFAAHaTDEfd/w3dJXoJMGA6EAOOr6+tpr7s7OztjG1y8jDw4O5Pj4ODZAJicnE305SSgAjnt9fZWLiwvZ3t6WYrEopVJJbm5uzOin09PT2GDQF5t+GgyEApASZ2dnsYeUGiQ/QSgAKXJ+fm79YpNuMfT68icIBSBl6sGQJBAUoQCkkL7ElCQQFKEAwEIoALAQCgAshAIAC6EAwEIoALAQCgAshAIAC6EAwBIbCovLJfMXgKwJ9r8fCsW1TSn/be634wH8fyrVmtf/dX4oaCAEBwBkQ3hB4IeC0iUEKwYgG+oLgfDRgRUKKjhRDx8oikpfNVoAREIBQJaJ/AOp35AKcE/u0AAAAABJRU5ErkJggg==" IsResponsive="True" Reference="ao86_PT9xkmS2L7lE3WumQ/lxkzI0X4TUGNQk0i08QpeA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Process Monitor' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="404, 343, 60, 25" ElementType="Text" FriendlyName="'Name'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PMN_DERIVED_PTPRCSGRPBOXLBLS' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='PMN_FILTER_WRK_PRCSNAME_LBL' tableRow='7' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='ACE_PMN_DERIVED_PTPRCSGRPBOXLBLS' tag='TABLE' /&gt;&lt;webctrl id='PMN_FILTER_WRK_PRCSNAME_LBL' type='' tag='LABEL' class='PSEDITBOXLABEL' aaname='Name' check:innerText='Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAdCAYAAAAaeWr3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAALESURBVFhH7ZYh06MwEIbvd9bEYDAYTFUMBnMGg8LUVGMwqJqaGgymCoPBfAZT9d5CN2FDW9rvrjc3N/Sd2YHZbELyJOzmB1auDwB+rlYfAPxcrT4A+LlazQDUyDYbbEZTiI9f7JfqUGoTo1F27P5PtQCAzMtQX7jJak0AyMK85TajlQG4XeTqAGygkhN6jngKoKuQJxECT039vQDbeI9qFtuV2sZkNdA3JZKtDzX6FPxox316NIcUkc9jKh/RrqKZ3BPFlgm2NtZDEKU4NNMKpBaToFLm3cfuzCFLALoS2va5Y8qNlwC01rzwmakt4si/9ZOp+AgnTfcNcj2Bd00hunNcFwBkKMUEN7pg4o8A9Dj+NNQ1itZkzy+cUs+O400kHQDDBHV+vi6or5D5xs9tRYtxxLYQkANMKeqCOjOghrGa66l1oIQ0rzHYahFAjTN2diKmLP5GDqhSjicbzjrLARDkkHOrM7GT0UHsNIGO2U9mh+uPiE18WDhjoc0RcJvcgEFPAAybkcIzvrEsvgbg0rc4VwfkaYxQ/haPAKQVe6+SbfNJ1xn3IbPD1Zn1yW9cJdY1A/0UwHCEj/G0G2F+QvEQwBeq/WzBc3sEYDZp2aZnlO8BcMZaNLOuq14AQKIjFFq/B88z724OmP5BMhUiTnMczvTvVvd3598ASCHP2msAnAQjTQAYKoDxe/QRWXVeyQF/CODRN57pRQCk/oTk5mgLAPIf1KVTo9s8mNr+FoCFJHg5JTZezb7zOgDS7TF7cALIv+eLR0fHfyvBiWT3VgB0Sk+JyVWypDbY25wVirJ51bcAwCmLgy3kAGl0G/MMBJGF3wuA1NP8A1E+HSMos3EGfRMAfUOWRQfAIK4CfA0ersBRekDT97Q7ps+0C28HMKob52CvwrRwf5ugqJ07o9UMwPr0AcDP1eoDgJ+r1coBAL8Au6DcvlvOxbwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NTypeInto.Target>
-                  </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="[cdbl(in_Config(&quot;SmallDelay&quot;))]" DisplayName="Click 'Refresh button'" sap:VirtualizedContainerService.HintSize="544,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://soklf-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS/EMPLOYEE/ERP/c/PROCESSMONITOR.PROCESSMONITOR.GBL?PortalActualURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Process%20Monitor&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS%2f&amp;PortalURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" ContentHash="1RLv5KxfrkC8eB8LPLqnsw" DesignTimeRectangle="1000, 260, 97, 16" DesignTimeScaleFactor="1" FriendlyName="'Refresh'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='REFRESH_BTN' aaname='Refresh' class='PSPUSHBUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='REFRESH_BTN' aaname='Refresh' class='PSPUSHBUTTON' tag='INPUT' type='button' check:text='Refresh' /&gt;" Guid="07bb1082-04e0-4bb9-a372-67a0736cf982" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGUAAAAUCAYAAACUAvOrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVGhD7ZbRDcIgEEAdxsWcwCGMW3QEN+gAJv4Y/eivv0aHOIGDcgc0oEnrJb2XkEgpR73H0W5AEYdKEYhKEYhKEchCUh5w2J9hW2wXOD39bY28+svPc+vgsx7uvvsHFpVS+qOY4G+SO3fSVIrhDafjGXb92/crPAfYzVIhAZViwDEm5X7zxxO2cSy5vu0eWGnd4MSye508fi8lHoHJvPCsPZ+/pCQhx9cNrhP9TFpSKSG5LLaTR6sJq3EU48bJGiwmrsfGs3jzIuBFTwVg8jJ5NIlFKTQGwLVLKs9C5pXmRJJN4JjeVHPwt0rBxKS7r0FeScpxgBd2Db4qijHCPL5OXcBKpFjsjmZiXMIrf74qBdfKKmUC3BxUzsqlhOsxqQ0Jba2U5MVeI8ZZvRSD/6IKY7hzSfUYXEWFxFelGJKYFoyLRyD9jdDPcpViCO+AJNHm/rHRpLdIsXgxseUfA2x8rKzVSFG+QaUIRKUIRKUIRKWIA+ADfKZXUBR07ZcAAAAASUVORK5CYII=" InformativeScreenshot="0we4SE2-BwEaysx8gPRpVyg" Reference="ao86_PT9xkmS2L7lE3WumQ/Mz5_a6hpLkyw6q0HaZYJwQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Process Monitor' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target DesignTimeRectangle="1000, 303, 97, 16" ElementType="Button" FriendlyName="'Clear'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_DERIVED_PTPMNCLEARFILTER' aaname='Clear Filter' class='PSPUSHBUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_DERIVED_PTPMNCLEARFILTER' aaname='Clear Filter' class='PSPUSHBUTTON' tag='INPUT' type='button' check:text='Clear' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGUAAAAUCAYAAACUAvOrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVGhD7ZfBDYMwDAA7TBfrBB0CsUVHYAMGqMQH0Ue/fBEM4ZLYgJ0AygtM5ZP8SF1UyRfb9AaGOkyKQkyKQkyKQtRJ6csK7s83iwZqyjl8Pv9CT+d/RJGUFjInISg4Sqqg6NjZpBxD/YqFTPCcSTkM7JLsQ8cdYikDFPk06lzIcQfdFx5zjuLVUtL97tiFZbP+7EnokOILt4yoPaQUlPkoB39y4Libirsi+4MC8LP1kXk2iqSk3VIhxRU4Kih2Dhcl4aJiqRq4dKdgV7CxxEIWOhxxUkrK2DySa+wU1klcyt7LAULjyYXYIyYlCTGWArbevrBTdsae3x9Bnha/SUmCbnUgBgu/9T+Fnpm7YIQX3UvhY5G+P4swKUn4rqDCYcibHnfUUugpeJFRKs/RfvEiTYqRiElRiElRiElRiElRB8APCle88ADrNVoAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,715.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,336.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,463.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -269,7 +247,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <If sap2010:Annotation.AnnotationText="If statement checks in each row if the process name and status in the table matches with the values from config file and fetches the instance number when value matches." Condition="[CurrentRow.Item(&quot;Process Name&quot;).ToString.Contains(in_Config(&quot;InstanceNumberProcessName&quot;).ToString) = true AND (CurrentRow.Item(&quot;Run Status&quot;).ToString.Contains(in_Config(&quot;InstanceNumberStatusQueued&quot;).ToString) or CurrentRow.Item(&quot;Run Status&quot;).ToString.Contains(in_Config(&quot;InstanceNumberStatusProcessing&quot;).ToString)) = true AND out_strInstanceNumber.Equals(&quot;&quot;) = true]" DisplayName="If Process Name Matches" sap:VirtualizedContainerService.HintSize="510,589.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If sap2010:Annotation.AnnotationText="If statement checks in each row if the process name and status in the table matches with the values from config file and fetches the instance number when value matches." Condition="[CurrentRow.Item(&quot;Process Name&quot;).ToString.Contains(in_Config(&quot;InstanceNumberProcessName&quot;).ToString) = true AND (CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusQueued&quot;).ToString) or CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusProcessing&quot;).ToString)) = true AND out_strInstanceNumber.Equals(&quot;&quot;) = true]" DisplayName="If Process Name Matches" sap:VirtualizedContainerService.HintSize="510,589.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -224,15 +224,15 @@
           }
         }
       },
-      "HolidayCalendar_1.0/0.0.1-alpha.9": {
+      "HolidayCalendar_1.0/0.0.1": {
         "type": "package",
         "dependencies": {
-          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.9",
+          "HolidayCalendar_1.0.Library.Runtime": "0.0.1",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.WebAPI.Activities": "1.18.0"
         }
       },
-      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
+      "HolidayCalendar_1.0.Library.Runtime/0.0.1": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -243,9 +243,9 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/Holiday Calendar.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll": {}
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_23749772.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_33592719.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_55491308.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.38": {
@@ -261,15 +261,15 @@
           }
         }
       },
-      "LIB_O365MailActivities_00.00/1.0.2": {
+      "LIB_O365MailActivities_00.00/1.0.3": {
         "type": "package",
         "dependencies": {
-          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.2",
+          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.3",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.2": {
+      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -280,10 +280,10 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_41249648.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_48819313.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_61698184.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_909586.dll": {}
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -5976,15 +5976,15 @@
           }
         }
       },
-      "HolidayCalendar_1.0/0.0.1-alpha.9": {
+      "HolidayCalendar_1.0/0.0.1": {
         "type": "package",
         "dependencies": {
-          "HolidayCalendar_1.0.Library.Runtime": "0.0.1-alpha.9",
+          "HolidayCalendar_1.0.Library.Runtime": "0.0.1",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.WebAPI.Activities": "1.18.0"
         }
       },
-      "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
+      "HolidayCalendar_1.0.Library.Runtime/0.0.1": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -5995,9 +5995,9 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/Holiday Calendar.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll": {},
-          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll": {}
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_23749772.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_33592719.dll": {},
+          "lib/net6.0-windows7.0/Holiday Calendar_Expressions_55491308.dll": {}
         }
       },
       "HtmlAgilityPack/1.11.38": {
@@ -6013,15 +6013,15 @@
           }
         }
       },
-      "LIB_O365MailActivities_00.00/1.0.2": {
+      "LIB_O365MailActivities_00.00/1.0.3": {
         "type": "package",
         "dependencies": {
-          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.2",
+          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.3",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.2": {
+      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -6032,10 +6032,10 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_41249648.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_48819313.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_61698184.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_909586.dll": {}
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll": {},
+          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -11662,10 +11662,10 @@
         "lib/netstandard2.0/Google.Apis.PeopleService.v1.xml"
       ]
     },
-    "HolidayCalendar_1.0/0.0.1-alpha.9": {
-      "sha512": "OHFN/4D7795Zqk2qThFOZL0DmCH6qNf9jo/U3nPmWob8Jx8fsaMnJ/i+i/Ncr8v8VYyXhA61jl2I4iB3DPwhXA==",
+    "HolidayCalendar_1.0/0.0.1": {
+      "sha512": "2y2xaABnXC/X8rGeOmpBL1nn9H7nxjHzeLgU+lXEQCujsHBbd/6OX2D3tuPR/qC58PXS4pc/VS1f7Y90IB8uZg==",
       "type": "package",
-      "path": "holidaycalendar_1.0/0.0.1-alpha.9",
+      "path": "holidaycalendar_1.0/0.0.1",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
@@ -11682,26 +11682,26 @@
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "holidaycalendar_1.0.0.0.1-alpha.9.nupkg.sha512",
+        "holidaycalendar_1.0.0.0.1.nupkg.sha512",
         "holidaycalendar_1.0.nuspec"
       ]
     },
-    "HolidayCalendar_1.0.Library.Runtime/0.0.1-alpha.9": {
-      "sha512": "NwDmdGZFTCtW3DSQoxxDi7cspKE7SJBuV9wzAKVRuLPzgun4xCPJ4kWwCEQ3cLrDGEuoEkt9oHxCaeX8TWGI2A==",
+    "HolidayCalendar_1.0.Library.Runtime/0.0.1": {
+      "sha512": "SIaIR0/KHYeRxz6w19kLNf2ck1yWjX52MUWOwBDSAWwgRlubMv8cXEZR7NqoazLxHJDnRMyZHqiYddSqmc25sA==",
       "type": "package",
-      "path": "holidaycalendar_1.0.library.runtime/0.0.1-alpha.9",
+      "path": "holidaycalendar_1.0.library.runtime/0.0.1",
       "files": [
         ".nupkg.metadata",
         "content/.settings/Release/settings-9e9290da.json",
         "content/README.md",
         "content/bindings.json",
         "content/bindings_v2.json",
-        "holidaycalendar_1.0.library.runtime.0.0.1-alpha.9.nupkg.sha512",
+        "holidaycalendar_1.0.library.runtime.0.0.1.nupkg.sha512",
         "holidaycalendar_1.0.library.runtime.nuspec",
         "lib/net6.0-windows7.0/Holiday Calendar.dll",
-        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_10577379.dll",
-        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32846161.dll",
-        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_32957621.dll"
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_23749772.dll",
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_33592719.dll",
+        "lib/net6.0-windows7.0/Holiday Calendar_Expressions_55491308.dll"
       ]
     },
     "HtmlAgilityPack/1.11.38": {
@@ -11752,10 +11752,10 @@
         "lib/uap10.0/HtmlAgilityPack.pri"
       ]
     },
-    "LIB_O365MailActivities_00.00/1.0.2": {
-      "sha512": "wrr77yHHO3f4FX3uaYztl+6cn7ZXHGRcAV8h6zIPZrFjD9T1OqCrM0X2h2K556kRZw39uRv5COoXFHJlRKWiMg==",
+    "LIB_O365MailActivities_00.00/1.0.3": {
+      "sha512": "6U9rMqwQC/Q4zO5LTQ9S+pgJUqHXDb/mHzzP3SHACPUfryuTLkYns5ioHc5S6X+oLP/cQWVzyFnibXcvXxY2dw==",
       "type": "package",
-      "path": "lib_o365mailactivities_00.00/1.0.2",
+      "path": "lib_o365mailactivities_00.00/1.0.3",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
@@ -11781,14 +11781,14 @@
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "lib_o365mailactivities_00.00.1.0.2.nupkg.sha512",
+        "lib_o365mailactivities_00.00.1.0.3.nupkg.sha512",
         "lib_o365mailactivities_00.00.nuspec"
       ]
     },
-    "LIB_O365MailActivities_00.00.Library.Runtime/1.0.2": {
-      "sha512": "F+ZUjiwnSK8hhlorkp3UNWyPTG3WFynGj7z6AARq1KkJ1clEGY8qn7pKCgxkjr18yxH22bBO+VuN20c7iboQIw==",
+    "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
+      "sha512": "KqZmDwZTF3BMu61a+P7qlxGSTs9XFarH0VGX0xpNAbKl+rlLQDpNiynf2neDHreMVq8GLjZ8z9LLPfPp+lWWVA==",
       "type": "package",
-      "path": "lib_o365mailactivities_00.00.library.runtime/1.0.2",
+      "path": "lib_o365mailactivities_00.00.library.runtime/1.0.3",
       "files": [
         ".nupkg.metadata",
         "content/.settings/Release/settings-1a5b880a.json",
@@ -11803,11 +11803,11 @@
         "contentFiles/any/any/.objects/.metadata",
         "contentFiles/any/any/.objects/.type",
         "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_41249648.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_48819313.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_61698184.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_909586.dll",
-        "lib_o365mailactivities_00.00.library.runtime.1.0.2.nupkg.sha512",
+        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll",
+        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll",
+        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll",
+        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll",
+        "lib_o365mailactivities_00.00.library.runtime.1.0.3.nupkg.sha512",
         "lib_o365mailactivities_00.00.library.runtime.nuspec"
       ]
     },
@@ -22941,8 +22941,8 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "HolidayCalendar_1.0 >= 0.0.1-alpha.9 <= 0.0.1-alpha.9",
-      "LIB_O365MailActivities_00.00 >= 1.0.2 <= 1.0.2",
+      "HolidayCalendar_1.0 >= 0.0.1 <= 0.0.1",
+      "LIB_O365MailActivities_00.00 >= 1.0.3 <= 1.0.3",
       "LIB_O365_Sharepoint_00.00 >= 1.0.2 <= 1.0.2",
       "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.32 <= 1.0.1-alpha.32",
       "UiPath.Excel.Activities >= 2.20.2 <= 2.20.2",
@@ -22970,12 +22970,12 @@
           "HolidayCalendar_1.0": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[0.0.1-alpha.9, 0.0.1-alpha.9]"
+            "version": "[0.0.1, 0.0.1]"
           },
           "LIB_O365MailActivities_00.00": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.2, 1.0.2]"
+            "version": "[1.0.3, 1.0.3]"
           },
           "LIB_O365_Sharepoint_00.00": {
             "include": "Runtime",

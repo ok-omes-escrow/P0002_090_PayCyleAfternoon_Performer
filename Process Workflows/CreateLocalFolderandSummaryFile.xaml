@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,2894</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,3044</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateSharepointConnectionAndFolders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,15 +135,15 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="680.6666666666666,2829.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Sequence: CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="596.6666666666666,2979.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="618.6666666666666,2718.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="534.6666666666666,2868.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the local folders are already present in local Output directory and creates them if it is not present. It also creates the local copy of Summary file." DisplayName="CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="580,2479.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the local folders are already present in local Output directory and creates them if it is not present. It also creates the local copy of Summary file." DisplayName="CreateLocalFolderandSummaryFile" sap:VirtualizedContainerService.HintSize="496,2629.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolLocalFolderExists" />
             <Variable x:TypeArguments="x:String" Name="strLocalFolderPath" />
@@ -152,6 +152,9 @@
             <Variable x:TypeArguments="x:String" Name="strLocalDayFolderPath" />
             <Variable x:TypeArguments="x:Boolean" Name="boolLocalYearFolderExists" />
             <Variable x:TypeArguments="x:Boolean" Name="boolLocalMonthFolderExists" />
+            <Variable x:TypeArguments="x:String" Name="strLocalRootFolder" />
+            <Variable x:TypeArguments="x:Boolean" Name="boolLocalRootFolderExists" />
+            <Variable x:TypeArguments="x:String" Name="strExceptionSSFolderPath" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -160,16 +163,24 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="518,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CreateLocalFolderandSummaryFileWorkflowStarted&quot;).ToString]" />
-          <ui:MultipleAssign DisplayName="Multiple Assign: Local Folder Paths" sap:VirtualizedContainerService.HintSize="518,192.66666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CreateLocalFolderandSummaryFileWorkflowStarted&quot;).ToString]" />
+          <Assign DisplayName="Assign: Root folder Replace" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strLocalRootFolder]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("LocalRootFolderPath").ToString.Replace("&lt;UserName&gt;", Environment.UserName)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:MultipleAssign DisplayName="Multiple Assign: Local Folder Paths" sap:VirtualizedContainerService.HintSize="434,223.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
-              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[strLocalFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[strLocalRootFolder+"\"+in_Config("ProcessFolderName").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -177,7 +188,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalYearFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[strLocalRootFolder+"\"+in_Config("ProcessFolderName").ToString+"\"+in_Config("FolderNameYear").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -185,7 +196,7 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalMonthFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[strLocalRootFolder+"\"+in_Config("ProcessFolderName").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -193,7 +204,15 @@
                     <OutArgument x:TypeArguments="x:String">[strLocalDayFolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[strLocalRootFolder+"\"+in_Config("ProcessFolderName").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strExceptionSSFolderPath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[strLocalRootFolder+"\"+in_Config("ProcessFolderName").ToString+"\"+in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -205,7 +224,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:FolderExistsX DisplayName="Folder Exists: Local Output Folder" Exists="[boolLocalFolderExists]" sap:VirtualizedContainerService.HintSize="518,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strLocalFolderPath]">
+          <Assign DisplayName="Assign : Exception SS Path" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[in_Config("ExScreenshotsFolderPath")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Object">[strExceptionSSFolderPath]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:FolderExistsX DisplayName="Folder Exists: Local Folder" Exists="[boolLocalRootFolderExists]" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_4" Path="[strLocalRootFolder]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,7 +240,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FolderExistsX>
-          <If sap2010:Annotation.AnnotationText="Creates an Throws an exception if local output folder is not present." Condition="[boolLocalFolderExists]" DisplayName="If Local Output Folder Present" sap:VirtualizedContainerService.HintSize="518,116" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap2010:Annotation.AnnotationText="Creates an Throws an exception if local output folder is not present." Condition="[boolLocalRootFolderExists]" DisplayName="If Local Root Folder Present" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="If_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -222,14 +249,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,408.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,408.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message: Local Output Folder Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalFolderPresent&quot;).ToString]" />
-                <ui:FolderExistsX DisplayName="Folder Exists: Local Year Output Folder" Exists="[boolLocalYearFolderExists]" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_2" Path="[strLocalYearFolderPath]">
+                <ui:LogMessage DisplayName="Log Message: Local Output Folder Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalRootFolderPresent&quot;).ToString]" />
+                <ui:FolderExistsX DisplayName="Folder Exists: Local Process Folder" Exists="[boolLocalFolderExists]" sap:VirtualizedContainerService.HintSize="334,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strLocalFolderPath]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,18 +267,56 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,364" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,364" sap2010:WorkflowViewState.IdRef="Sequence_16">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message: Local Output Folder Not Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalFolderNotPresent&quot;).ToString + strLocalFolderPath]" />
-                <Throw DisplayName="Throw SE : Output Folder Not Present" Exception="[new SystemException(in_Config(&quot;LocalFolderNotPresentSE&quot;).ToString + strLocalFolderPath)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                <ui:LogMessage DisplayName="Log Message: Local Root Folder Not Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalFolderNotPresent&quot;).ToString + strLocalFolderPath]" />
+                <Throw DisplayName="Throw SE : Root Folder Not Present" Exception="[new SystemException(in_Config(&quot;LocalFolderNotPresentSE&quot;).ToString + strLocalFolderPath)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_3" />
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[boolLocalYearFolderExists]" DisplayName="If Local Year Folder Exist" sap:VirtualizedContainerService.HintSize="518,54" sap2010:WorkflowViewState.IdRef="If_3">
+          <If sap2010:Annotation.AnnotationText="Creates local output folder is not present." Condition="[boolLocalFolderExists]" DisplayName="If Local Output Folder Present" sap:VirtualizedContainerService.HintSize="434,99.33333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,232" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message: Local Process Folder Not Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalFolderPresent&quot;).ToString]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder : Local Folder" sap:VirtualizedContainerService.HintSize="334,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[strLocalFolderPath]" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder : Exception SS Folder" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[strExceptionSSFolderPath]" />
+          <ui:FolderExistsX DisplayName="Folder Exists: Local Year Output Folder" Exists="[boolLocalYearFolderExists]" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_2" Path="[strLocalYearFolderPath]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:FolderExistsX>
+          <If Condition="[boolLocalYearFolderExists]" DisplayName="If Local Year Folder Exist" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -294,7 +359,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists: Local Month Output Folder" Exists="[boolLocalMonthFolderExists]" sap:VirtualizedContainerService.HintSize="518,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[strLocalMonthFolderPath]">
+          <ui:FolderExistsX DisplayName="Folder Exists: Local Month Output Folder" Exists="[boolLocalMonthFolderExists]" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[strLocalMonthFolderPath]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,7 +367,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FolderExistsX>
-          <If Condition="[boolLocalMonthFolderExists]" DisplayName="If Local Month Folder Exist" sap:VirtualizedContainerService.HintSize="518,54" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[boolLocalMonthFolderExists]" DisplayName="If Local Month Folder Exist" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="If_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -345,7 +410,16 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:LogMessage DisplayName="Log Message: Local Day Folder Not Present" sap:VirtualizedContainerService.HintSize="518,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalDayFolderNotPresent&quot;).ToString]">
+          <ui:LogMessage DisplayName="Log Message: Local Day Folder Not Present" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;LocalDayFolderNotPresent&quot;).ToString]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder : Local Day Folder" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[strLocalDayFolderPath]" />
+          <ui:LogMessage DisplayName="Log Message:Creating Sumary File" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SummaryFileNotPresent&quot;).ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -353,16 +427,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder : Local Day Folder" sap:VirtualizedContainerService.HintSize="518,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[strLocalDayFolderPath]" />
-          <ui:LogMessage DisplayName="Log Message:Creating Sumary File" sap:VirtualizedContainerService.HintSize="518,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SummaryFileNotPresent&quot;).ToString]">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:LogMessage>
-          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope: Summary FIle" sap:VirtualizedContainerService.HintSize="518,532.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+          <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope: Summary FIle" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
             <ueab:ExcelProcessScopeX.Body>
               <ActivityAction x:TypeArguments="ui:IExcelProcess">
                 <ActivityAction.Argument>
@@ -402,16 +467,16 @@
             </ueab:ExcelProcessScopeX.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ueab:ExcelProcessScopeX>
-          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="518,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CreateLocalFolderandSummaryFileWorkflowCompleted&quot;).ToString]" />
+          <ui:LogMessage DisplayName="Log Message: Workflow Completed" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CreateLocalFolderandSummaryFileWorkflowCompleted&quot;).ToString]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="584.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

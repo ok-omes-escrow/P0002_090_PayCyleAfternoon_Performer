@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.3333333333333,3193.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,2805.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SelectPayCycle_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,16 +116,16 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="648.6666666666666,3128.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Sequence: UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="648.6666666666666,2740.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="586.6666666666666,3018" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="586.6666666666666,2630" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow creates a data table using all the values required and adds data to summary file." DisplayName="UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="548,2778.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow creates a data table using all the values required and adds data to summary file." DisplayName="UpdateSummaryFile" sap:VirtualizedContainerService.HintSize="548,2390.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolSummaryFileExists" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_SummaryReportData" />
@@ -150,7 +150,7 @@
               <OutArgument x:TypeArguments="x:String">[strSummaryFilePath]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("LocalFolderPath").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString+"\"+in_Config("SummaryFileName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_Config("LocalRootFolderPath").ToString.Replace("&lt;UserName&gt;", Environment.UserName)+"\"+in_Config("ProcessFolderName").ToString+"\"+in_Config("FolderNameYear").ToString+"\"+in_Config("FolderNameMonth").ToString+"\"+in_Config("FolderNameDay").ToString+"\"+in_Config("SummaryFileName").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:BuildDataTable DataTable="[dt_SummaryReportData]" DisplayName="Build Data Table: Summary Data" sap:VirtualizedContainerService.HintSize="486,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Pay_x0020_Cycle&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Instance_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Comments&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
@@ -163,7 +163,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FileExistsX>
-          <If sap2010:Annotation.AnnotationText="Checking if Summary file is present or not and if it is found add data to it and if not  found we are throwing exception." Condition="[boolSummaryFileExists]" DisplayName="If File Exists" sap:VirtualizedContainerService.HintSize="486,1634.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+          <If sap2010:Annotation.AnnotationText="Checking if Summary file is present or not and if it is found add data to it and if not  found we are throwing exception." Condition="[boolSummaryFileExists]" DisplayName="If File Exists" sap:VirtualizedContainerService.HintSize="486,1246.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,7 +172,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="452,1405.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence sap:VirtualizedContainerService.HintSize="452,1017.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="strSummaryFileCellValue" />
                 </Sequence.Variables>
@@ -194,7 +194,7 @@
                     <OutArgument x:TypeArguments="x:String">[strSummaryFileCellValue]</OutArgument>
                   </ui:ReadCell.Result>
                 </ui:ReadCell>
-                <If sap2010:Annotation.AnnotationText="Checking if Summary file has no data so data will be added to the summary with headers else data will be added without headers." Condition="[strSummaryFileCellValue is Nothing]" DisplayName="If File has no data" sap:VirtualizedContainerService.HintSize="410,1005.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
+                <If sap2010:Annotation.AnnotationText="Checking if Summary file has no data so data will be added to the summary with headers else data will be added without headers." Condition="[strSummaryFileCellValue is Nothing]" DisplayName="If File has no data" sap:VirtualizedContainerService.HintSize="410,617.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

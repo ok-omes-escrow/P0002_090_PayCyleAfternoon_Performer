@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JwdHVFufjfDCSARnnkaKrZdLs287Pkv/2LPuMc1saEWjtPS0iR63g44/VfLgk/kvAyiirIdUf2iWn+fIit/lsw==",
+  "dgSpecHash": "E8F8tySAD6dEf8GbDmCo5tdUmItPzX0zdbo7QwoE58FVakLOPR3aXP6+GTNmD5Ru67PmMmB7e87lKVwoh10aOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\55651C\\Documents\\GitHub\\P0002_090_PayCyleAfternoon_Performer\\.local\\",
   "expectedPackageFiles": [
@@ -17,11 +17,11 @@
     "C:\\Users\\55651C\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\google.apis.gmail.v1\\1.55.0.2510\\google.apis.gmail.v1.1.55.0.2510.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\google.apis.peopleservice.v1\\1.55.0.2567\\google.apis.peopleservice.v1.1.55.0.2567.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\holidaycalendar_1.0\\0.0.1-alpha.9\\holidaycalendar_1.0.0.0.1-alpha.9.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\holidaycalendar_1.0.library.runtime\\0.0.1-alpha.9\\holidaycalendar_1.0.library.runtime.0.0.1-alpha.9.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\holidaycalendar_1.0\\0.0.1\\holidaycalendar_1.0.0.0.1.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\holidaycalendar_1.0.library.runtime\\0.0.1\\holidaycalendar_1.0.library.runtime.0.0.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\htmlagilitypack\\1.11.38\\htmlagilitypack.1.11.38.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00\\1.0.2\\lib_o365mailactivities_00.00.1.0.2.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00.library.runtime\\1.0.2\\lib_o365mailactivities_00.00.library.runtime.1.0.2.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00\\1.0.3\\lib_o365mailactivities_00.00.1.0.3.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_o365mailactivities_00.00.library.runtime\\1.0.3\\lib_o365mailactivities_00.00.library.runtime.1.0.3.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_o365_sharepoint_00.00\\1.0.2\\lib_o365_sharepoint_00.00.1.0.2.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2\\1.0.1-alpha.32\\lib_peoplesoft_9.2.1.0.1-alpha.32.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2.library.runtime\\1.0.1-alpha.32\\lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.32.nupkg.sha512",
