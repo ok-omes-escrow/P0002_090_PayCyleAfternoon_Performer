@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CreateSharepointConnectionAndFolders" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_O365_Sharepoint_00_00;assembly=LIB_O365_Sharepoint_00.00" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateSharepointConnectionAndFolders" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_strSharePointFolderPath" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>561.3333333333334,1073.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1626.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateSharepointConnectionAndFolders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -58,6 +58,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>LIB_GraphAPI</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,17 +124,18 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>LIB_GraphAPI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="550.6666666666666,1008.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Sequence: UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="550.6666666666666,1562" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="488.6666666666667,898" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="488.66666666666674,1357.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow uploads the Summary file to Sharepoint folder." DisplayName="UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="450,658.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow uploads the Summary file to Sharepoint folder." DisplayName="UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="450,1118" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolFileUploaded" />
           </Sequence.Variables>
@@ -145,14 +147,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;UploadFilesToSharepointWorkflowStarted&quot;).ToString]" />
-          <l:Upload_File DisplayName="Upload File: Summary file To Sharepoint" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="Upload_File_1" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[in_strUploadFileLocalPath]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolFileUploaded="[boolFileUploaded]">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </l:Upload_File>
+          <l:Upload_File DisplayName="Upload File: Summary file To Sharepoint" sap:VirtualizedContainerService.HintSize="388,513.3333333333334" sap2010:WorkflowViewState.IdRef="Upload_File_2" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;OrchestratorGraphAPIAssetsFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[in_strUploadFileLocalPath]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolFileUploaded="[boolFileUploaded]" />
           <If Condition="[boolFileUploaded]" DisplayName="If File Uploaded" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CreateSharepointConnectionAndFolders" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_O365_Sharepoint_00_00;assembly=LIB_O365_Sharepoint_00.00" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateSharepointConnectionAndFolders" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_strFolderName" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562.6666666666666,1544</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2044.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateSharepointConnectionAndFolders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -58,6 +58,8 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>LIB_GraphAPI</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,20 +125,21 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>LIB_GraphAPI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="572.6666666666666,1479.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence DisplayName="Sequence: CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="572.6666666666666,1980" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="510.6666666666667,1368.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="510.6666666666667,1869.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the folder is already present in sharepoint and creates one if it is not present." DisplayName="CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="472,1129.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow checks if the folder is already present in sharepoint and creates one if it is not present." DisplayName="CheckAndCreateSharepointFolders" sap:VirtualizedContainerService.HintSize="472,1630" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:Boolean" Name="boolYearFolderCreated" />
-            <Variable x:TypeArguments="x:Boolean" Name="boolYearFolderExists" />
+            <Variable x:TypeArguments="x:Boolean" Name="boolFolderCreated" />
+            <Variable x:TypeArguments="x:Boolean" Name="boolFolderExists" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -146,37 +149,30 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message: Workflow Started" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;CreateSharepointFoldersWorkflowStarted&quot;).ToString]" />
-          <l:Get_Files_or_Folders out_diResultDriveItems="{x:Null}" DisplayName="Find Files or Folders : Sharepoint Folder" sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="Get_Files_or_Folders_1" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strSharepointFileOrFolderNameToSearch="[in_strFolderName]" in_strSharepointSubfolder="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolYearFolderExists]">
+          <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Files or Folders Exist : Sharepoint Folder" sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_1" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;OrchestratorGraphAPIAssetsFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[in_strFolderName]" in_strSharepointSubfolder="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFolderExists]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </l:Get_Files_or_Folders>
-          <If Condition="[boolYearFolderExists = False]" DisplayName="If Folder Does not exist" sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="If_1">
+          </l:Files_or_Folders_Exist>
+          <If Condition="[boolFolderExists = False]" DisplayName="If Folder Does not exist" sap:VirtualizedContainerService.HintSize="410,916.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,680" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,732.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message: Sharepoint Folder Not Present" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;SharepointFolderNotPresent&quot;).ToString + in_strFolderName]" />
-                <l:Create_Folder DisplayName="Create Folder: Year Folder" sap:VirtualizedContainerService.HintSize="334,408" sap2010:WorkflowViewState.IdRef="Create_Folder_1" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strSharepointNewFolderName="[in_strFolderName]" in_strSharepointParentFolderPath="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolFolderCreated="[boolYearFolderCreated]">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </l:Create_Folder>
+                <l:Create_Folder DisplayName="Create Folder : Sharepoint Folder" sap:VirtualizedContainerService.HintSize="334,460.6666666666667" sap2010:WorkflowViewState.IdRef="Create_Folder_2" in_strApplicationIDAssetName="[in_Config(&quot;GraphAPIO365ApplicationID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;GraphAPIApplicationSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;OrchestratorGraphAPIAssetsFolder&quot;).ToString]" in_strSharepointNewFolderName="[in_strFolderName]" in_strSharepointParentFolderPath="[in_strSharePointFolderPath]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;GraphAPIO365TenantID&quot;).ToString]" out_boolFolderCreated="[boolFolderCreated]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -190,10 +186,10 @@
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[boolYearFolderExists = False and boolYearFolderCreated = False]" DisplayName="If Folder Creation and Exists is False" sap:VirtualizedContainerService.HintSize="410,416" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[boolFolderExists = False and boolFolderCreated = False]" DisplayName="If Folder Creation and Exists is False" sap:VirtualizedContainerService.HintSize="410,54" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
