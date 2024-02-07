@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>857.3333333333334,1304.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,1304.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -197,7 +197,7 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="450,320.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <Sequence DisplayName="Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="450,231.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -330,7 +330,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">330,665.9999999999997 330,695.9999999999997 210,695.9999999999997 210,715.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="200,196.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="688.6666666666666,2323.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -373,11 +373,21 @@
                                 </ui:SetTransactionStatus>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process Workflows\UpdateSummaryFile.xaml - Invoke Workflow File BE" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Process Workflows\UpdateSummaryFile.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_strInstanceNumber">[in_strInstanceNumber]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_strPaycycle">[in_TransactionItem.SpecificContent("Paycycle").ToString]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">[in_Config("SummaryReportStatusPending").ToString]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_strComments">[in_Config("SummaryReportCommentsPending").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strInstanceNumber">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;InstanceNumber&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strPaycycle">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Paycycle&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strStatus">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SummaryReportStatusPending&quot;).ToString" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_strComments">
+                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SummaryReportCommentsPending&quot;).ToString" />
+                                    </InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <Sequence DisplayName="Sequence: Send BE Email" sap:VirtualizedContainerService.HintSize="450,566" sap2010:WorkflowViewState.IdRef="Sequence_26">
@@ -495,7 +505,7 @@
                   <av:Size x:Key="ShapeSize">200,180</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="688.6666666666666,3641.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="200,180" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -658,31 +668,15 @@
                                   </ui:InvokeWorkflowFile>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail.xaml - Invoke Workflow File SE" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Process Workflows\SendEmail.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailSubject">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strMailSubject" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailAttachment">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailType">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MailTypeFail&quot;).ToString" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailBody">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strMailBody" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailRecepients">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailRecipient" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailRecepientsCC">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailCC" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailSubject">[strMailSubject]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailAttachment">[ScreenshotPath]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailType">[in_Config("MailTypeFail").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailBody">[strMailBody]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailRecepients">[strEmailRecipient]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strMailRecepientsCC">[strEmailCC]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionType" />
-                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                        <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionMessage">
-                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SystemException.Message" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionMessage">[in_SystemException.Message]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                   </ui:InvokeWorkflowFile>
                                 </Sequence>
