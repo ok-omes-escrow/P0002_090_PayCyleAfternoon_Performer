@@ -136,6 +136,8 @@
       "Path": "Process Workflows/CheckAndCreateSharepointFolders.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "boolFolderCreated&Sequence_1",
+        "boolFolderExists&Sequence_1",
         "boolYearFolderExists&Sequence_1",
         "boolYearFolderCreated&Sequence_1"
       ],
@@ -203,6 +205,9 @@
       "Path": "Process Workflows/CreateLocalFolderandSummaryFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strLocalRootFolder&Sequence_1",
+        "boolLocalRootFolderExists&Sequence_1",
+        "strExceptionSSFolderPath&Sequence_1",
         "boolLocalFolderExists&Sequence_1",
         "strLocalFolderPath&Sequence_1",
         "strLocalYearFolderPath&Sequence_1",
