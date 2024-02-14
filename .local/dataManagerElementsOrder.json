@@ -105,6 +105,8 @@
       "Path": "Process Workflows/CheckCreatedStatusandApprovePaycycle.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "boolApproveBtnDisabled&Sequence_28",
+        "strApproveBtnAttribute&Sequence_28",
         "strPaycycleStatus&Sequence_32",
         "boolPaycyleStatus&Sequence_32",
         "boolRetryScopeResult&Sequence_32",
@@ -137,9 +139,7 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "boolFolderCreated&Sequence_1",
-        "boolFolderExists&Sequence_1",
-        "boolYearFolderExists&Sequence_1",
-        "boolYearFolderCreated&Sequence_1"
+        "boolFolderExists&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_strSharePointFolderPath",
@@ -385,6 +385,22 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

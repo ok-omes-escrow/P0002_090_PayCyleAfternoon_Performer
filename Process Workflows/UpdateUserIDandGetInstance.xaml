@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>792.6666666666666,4173.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,3950</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,16 +126,16 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="802.6666666666666,4068.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="802.6666666666666,3685.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="740.6666666666666,3958" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="740.6666666666666,3574.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="702,3718.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow uses a reusable component to enter User ID, durationtype and duration to get the instance number which we need to fetch for the paycycle. The instance number is fetched from the table using a few conditions." DisplayName="UpdateUserIDandGetInstance" sap:VirtualizedContainerService.HintSize="702,3335.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessListData" />
             <Variable x:TypeArguments="x:String" Name="strURL" />
@@ -180,29 +180,29 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="640,2600" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Process Monitor" sap:VirtualizedContainerService.HintSize="640,2216.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="606,2380.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Sequence: Get Instanse Number" sap:VirtualizedContainerService.HintSize="606,1957.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,336.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="Checking if the table for instance number is present or not." DelayBefore="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" DisplayName="Check App State 'Process List Table'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,99.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,463.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message: Table Found" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;ProcessListTableFound&quot;).ToString]" />
-                        <uix:NExtractData ExtractDataSettings="{x:Null}" AppendResults="False" DataTable="[dt_ProcessListData]" DisplayName="Extract Table Data 'Process List Table'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Select' attr='fulltext' /&gt;&lt;column name='Instance' attr='fulltext' /&gt;&lt;column name='Seq.' attr='fulltext' /&gt;&lt;column name='Process Type' attr='fulltext' /&gt;&lt;column name='Process Name' attr='fulltext' name2='Process Name Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Src' attr2='src' name3='Column-5 Alt Text' attr3='alt' name4='Column-5 Url' attr4='href' /&gt;&lt;column name='User' attr='fulltext' /&gt;&lt;column name='Run Date/Time' attr='fulltext' /&gt;&lt;column name='Run Status' attr='fulltext' /&gt;&lt;column name='Distribution Status' attr='fulltext' /&gt;&lt;column name='Details' attr='fulltext' name2='Details Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V3">
+                        <uix:NExtractData ExtractDataSettings="{x:Null}" AppendResults="False" ContinueOnError="[convert.ToBoolean(in_Config(&quot;ContinueOnError&quot;))]" DataTable="[dt_ProcessListData]" DisplayName="Extract Table Data 'Process List Table'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Select' attr='fulltext' /&gt;&lt;column name='Instance' attr='fulltext' /&gt;&lt;column name='Seq.' attr='fulltext' /&gt;&lt;column name='Process Type' attr='fulltext' /&gt;&lt;column name='Process Name' attr='fulltext' name2='Process Name Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Src' attr2='src' name3='Column-5 Alt Text' attr3='alt' name4='Column-5 Url' attr4='href' /&gt;&lt;column name='User' attr='fulltext' /&gt;&lt;column name='Run Date/Time' attr='fulltext' /&gt;&lt;column name='Run Status' attr='fulltext' /&gt;&lt;column name='Distribution Status' attr='fulltext' /&gt;&lt;column name='Details' attr='fulltext' name2='Details Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,160" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Version="V3">
                           <uix:NExtractData.NextLink>
                             <uix:TargetAnchorable Accuracy="0.9" BrowserURL="https://soklf-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS/EMPLOYEE/ERP/c/PROCESSMONITOR.PROCESSMONITOR.GBL?PortalActualURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Process%20Monitor&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS%2f&amp;PortalURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" DesignTimeRectangle="1342, 455, 33, 31" DesignTimeScaleFactor="1" FriendlyName="'A PMN_PRCSLIST$hdown$0'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_PRCSLIST$hdown$0' tag='A' aaname='Show next row' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_PRCSLIST$hdown$0' tag='A' aaname='Show next row' type='' class='PTCPGRIDHDRNEXTDIVACN' /&gt;" Guid="f9d1d595-8976-4058-bbe5-51bd28fe18c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAAjCAYAAAATx8MeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC7SURBVFhH7dQxCsQgEIXhPWiOkkYCYpUqpEpp6TlyJBWRzCLMASb6Akt2fhiI0eJr9EM/mKKkKUqaoqQpSto7Ud57uq6LV5iGUdM00b7vUBgE1WZdV6q18t+xYKg21loqpfBOf1BUm2VZKOfMu33BUW3meaYYI5+43yOoNg3W2/+gjDGUUuIT94OjnHPDNxCK2rYN8lbBUMdxwF51CCqEwCtMw6jzPPkL1zDqiRQlTVHSFCVNUdIUJYvoC6APxiGHjGUZAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Process Monitor' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
@@ -235,19 +235,42 @@
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping through each elementof the table to check which instance number to be fetched." DataTable="[dt_ProcessListData]" DisplayName="For Each Row in Data Table: Process List Table" sap:VirtualizedContainerService.HintSize="544,739.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <If Condition="[dt_ProcessListData is Nothing]" DisplayName="If Rows were extracted" sap:VirtualizedContainerService.HintSize="544,550.6666666666666" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,366.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message: Table Instance Records Not Extracted" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[in_Config(&quot;TableInstanceRecordsNotExtracted&quot;).ToString]" />
+                        <Throw DisplayName="Throw SE: Table Instance Records Not Extracted" Exception="[new SystemException(in_Config(&quot;TableInstanceRecordsNotExtractedSE&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,234.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message: Table Instance Records Extracted" sap:VirtualizedContainerService.HintSize="334,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;TableInstanceRecordsExtracted&quot;).ToString]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Looping through each elementof the table to check which instance number to be fetched." DataTable="[dt_ProcessListData]" DisplayName="For Each Row in Data Table: Process List Table" sap:VirtualizedContainerService.HintSize="544,820.6666666666666" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <If sap2010:Annotation.AnnotationText="If statement checks in each row if the process name and status in the table matches with the values from config file and fetches the instance number when value matches." Condition="[CurrentRow.Item(&quot;Process Name&quot;).ToString.Contains(in_Config(&quot;InstanceNumberProcessName&quot;).ToString) = true AND (CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusQueued&quot;).ToString) or CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusProcessing&quot;).ToString)) = true AND out_strInstanceNumber.Equals(&quot;&quot;) = true]" DisplayName="If Process Name Matches" sap:VirtualizedContainerService.HintSize="510,589.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If sap2010:Annotation.AnnotationText="If statement checks in each row if the process name and status in the table matches with the values from config file and fetches the instance number when value matches." Condition="[CurrentRow.Item(&quot;Process Name&quot;).ToString.Contains(in_Config(&quot;InstanceNumberProcessName&quot;).ToString) = true AND (CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusQueued&quot;).ToString) or CurrentRow.Item(&quot;Run Status&quot;).ToString.ToUpper.Contains(in_Config(&quot;InstanceNumberStatusProcessing&quot;).ToString)) = true AND out_strInstanceNumber.Equals(&quot;&quot;) = true]" DisplayName="If Process Name Matches" sap:VirtualizedContainerService.HintSize="510,670.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -304,7 +327,7 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'No'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,909.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'No'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="544,54" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="f19a2ccd-3e83-4935-90d7-d6732540a51a" Timeout="[cdbl(in_Config(&quot;TargetAppearWait&quot;))]" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears : Save changes popup" sap:VirtualizedContainerService.HintSize="450,688" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
@@ -362,7 +385,7 @@
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
