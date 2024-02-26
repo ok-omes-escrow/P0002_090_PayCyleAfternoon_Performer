@@ -5,7 +5,7 @@
   "dependencies": {
     "HolidayCalendar_1.0": "[0.0.1]",
     "LIB_GraphAPI_1.0": "[1.0.1-alpha.2]",
-    "LIB_PeopleSoft_9.2": "[1.0.1-alpha.40]",
+    "LIB_PeopleSoft_9.2": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.20.2]",
     "UiPath.Mail.Activities": "[1.21.1]",
     "UiPath.System.Activities": "[23.4.5]",
@@ -17,7 +17,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.5",
+  "projectVersion": "1.0.7",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

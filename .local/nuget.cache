@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "29oHeWfFjCLnsqV1L9JKk0DN52yKW8fw4gQAGj2Gym4GNV3DhVzZrBCETXlyLlROPtSlLzwfsSfyyWh99AI9YQ==",
+  "dgSpecHash": "ZcdtLEiFg5xC+Eh3GwHoWVnh0+KAmMSMVGI8R1socQPLcVX+GJI0jxMMIrLoiNJzt6RVzDSPJKABiiB2WFvDZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\55651C\\Documents\\GitHub\\P0002_090_PayCyleAfternoon_Performer\\.local\\",
   "expectedPackageFiles": [
@@ -22,8 +22,8 @@
     "C:\\Users\\55651C\\.nuget\\packages\\htmlagilitypack\\1.11.38\\htmlagilitypack.1.11.38.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_graphapi_1.0\\1.0.1-alpha.2\\lib_graphapi_1.0.1.0.1-alpha.2.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\lib_graphapi_1.0.library.runtime\\1.0.1-alpha.2\\lib_graphapi_1.0.library.runtime.1.0.1-alpha.2.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2\\1.0.1-alpha.40\\lib_peoplesoft_9.2.1.0.1-alpha.40.nupkg.sha512",
-    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2.library.runtime\\1.0.1-alpha.40\\lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.40.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2\\1.0.1\\lib_peoplesoft_9.2.1.0.1.nupkg.sha512",
+    "C:\\Users\\55651C\\.nuget\\packages\\lib_peoplesoft_9.2.library.runtime\\1.0.1\\lib_peoplesoft_9.2.library.runtime.1.0.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\mailkit\\3.1.1\\mailkit.3.1.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\markdig.signed\\0.21.1\\markdig.signed.0.21.1.nupkg.sha512",
     "C:\\Users\\55651C\\.nuget\\packages\\microsoft.applicationinsights\\2.15.0\\microsoft.applicationinsights.2.15.0.nupkg.sha512",

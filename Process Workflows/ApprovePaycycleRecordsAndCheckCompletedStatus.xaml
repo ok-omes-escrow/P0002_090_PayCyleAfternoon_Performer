@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>857.3333333333334,4011.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,4198.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,16 +109,16 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence: ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="697.3333333333334,3946.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_53">
+  <Sequence DisplayName="Sequence: ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="697.3333333333334,4134" sap2010:WorkflowViewState.IdRef="Sequence_53">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch: ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="635.3333333333334,3836" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch: ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="635.3333333333334,4023.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="This workflow is the last step where all the paycycle results are being approved by selecting the server, output type and clicking on Process for each row, we are also checking if the status changes to Completed at the end to mark the record as a success or failure in summary report according to the status." DisplayName="ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="596.6666666666666,3573.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_30">
+        <Sequence sap2010:Annotation.AnnotationText="This workflow is the last step where all the paycycle results are being approved by selecting the server, output type and clicking on Process for each row, we are also checking if the status changes to Completed at the end to mark the record as a success or failure in summary report according to the status." DisplayName="ApprovePaycycleRecordsAndCheckCompletedStatus" sap:VirtualizedContainerService.HintSize="596.6666666666666,3760.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_30">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="strURL" />
           </Sequence.Variables>
@@ -144,13 +144,13 @@
               <InArgument x:TypeArguments="x:String">[in_Config("PeopleSoft_NavigationURL").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="534.6666666666666,2889.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge: Pay Cycle Manager" sap:VirtualizedContainerService.HintSize="534.6666666666666,3076.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6c0332a7-6165-48b8-bcce-12e3f07a19e5" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Sequence: Select Server and click Process" sap:VirtualizedContainerService.HintSize="500.6666666666667,2670" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                <Sequence DisplayName="Sequence: Select Server and click Process" sap:VirtualizedContainerService.HintSize="500.6666666666667,2857.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_31">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="intServerNameRow" />
                     <Variable x:TypeArguments="x:String" Name="strRowNumber" />
@@ -303,6 +303,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
+                  <ui:LogMessage DisplayName="Log Message: Total Records To Be Processed" sap:VirtualizedContainerService.HintSize="438.6666666666667,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[in_Config(&quot;TotalRecordsToBeApproved&quot;).ToString+&quot; &quot;+intServerNameTotalRows.ToString]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
                   <TryCatch DisplayName="Try Catch: ApproveAllRecords" sap:VirtualizedContainerService.HintSize="438.6666666666667,354.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
